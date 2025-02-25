@@ -10,7 +10,13 @@ __turbopack_esm__({
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/navigation.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$canvas$2d$confetti$2f$dist$2f$confetti$2e$module$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/canvas-confetti/dist/confetti.module.mjs [app-client] (ecmascript)");
+(()=>{
+    const e = new Error("Cannot find module '../stores/quizStore'");
+    e.code = 'MODULE_NOT_FOUND';
+    throw e;
+})();
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$brain$2d$circuit$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__BrainCircuit$3e$__ = __turbopack_import__("[project]/node_modules/lucide-react/dist/esm/icons/brain-circuit.js [app-client] (ecmascript) <export default as BrainCircuit>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$award$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Award$3e$__ = __turbopack_import__("[project]/node_modules/lucide-react/dist/esm/icons/award.js [app-client] (ecmascript) <export default as Award>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$sparkles$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Sparkles$3e$__ = __turbopack_import__("[project]/node_modules/lucide-react/dist/esm/icons/sparkles.js [app-client] (ecmascript) <export default as Sparkles>");
@@ -38,11 +44,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$modal$2f$dist$2f$chunk$2d$RE5G2YMK$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__modal_content_default__as__ModalContent$3e$__ = __turbopack_import__("[project]/node_modules/@nextui-org/modal/dist/chunk-RE5G2YMK.mjs [app-client] (ecmascript) <export modal_content_default as ModalContent>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$modal$2f$dist$2f$chunk$2d$3S23ARPO$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__modal_header_default__as__ModalHeader$3e$__ = __turbopack_import__("[project]/node_modules/@nextui-org/modal/dist/chunk-3S23ARPO.mjs [app-client] (ecmascript) <export modal_header_default as ModalHeader>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$modal$2f$dist$2f$chunk$2d$EPDLEVDR$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__modal_body_default__as__ModalBody$3e$__ = __turbopack_import__("[project]/node_modules/@nextui-org/modal/dist/chunk-EPDLEVDR.mjs [app-client] (ecmascript) <export modal_body_default as ModalBody>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$spinner$2f$dist$2f$chunk$2d$TDOFO53L$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__spinner_default__as__Spinner$3e$__ = __turbopack_import__("[project]/node_modules/@nextui-org/spinner/dist/chunk-TDOFO53L.mjs [app-client] (ecmascript) <export spinner_default as Spinner>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2d$big$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle$3e$__ = __turbopack_import__("[project]/node_modules/lucide-react/dist/esm/icons/circle-check-big.js [app-client] (ecmascript) <export default as CheckCircle>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$modal$2f$dist$2f$chunk$2d$QY5NICTW$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__modal_footer_default__as__ModalFooter$3e$__ = __turbopack_import__("[project]/node_modules/@nextui-org/modal/dist/chunk-QY5NICTW.mjs [app-client] (ecmascript) <export modal_footer_default as ModalFooter>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2d$big$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle$3e$__ = __turbopack_import__("[project]/node_modules/lucide-react/dist/esm/icons/circle-check-big.js [app-client] (ecmascript) <export default as CheckCircle>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$rotate$2d$ccw$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__RotateCcw$3e$__ = __turbopack_import__("[project]/node_modules/lucide-react/dist/esm/icons/rotate-ccw.js [app-client] (ecmascript) <export default as RotateCcw>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$refresh$2d$cw$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__RefreshCw$3e$__ = __turbopack_import__("[project]/node_modules/lucide-react/dist/esm/icons/refresh-cw.js [app-client] (ecmascript) <export default as RefreshCw>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$spinner$2f$dist$2f$chunk$2d$TDOFO53L$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__spinner_default__as__Spinner$3e$__ = __turbopack_import__("[project]/node_modules/@nextui-org/spinner/dist/chunk-TDOFO53L.mjs [app-client] (ecmascript) <export spinner_default as Spinner>");
 ;
 var _s = __turbopack_refresh__.signature();
 "use client";
@@ -51,6 +57,13 @@ var _s = __turbopack_refresh__.signature();
 ;
 ;
 ;
+;
+;
+// Declare constants at the top
+const TOTAL_QUESTIONS = 13;
+const DEFAULT_TIMER_SECONDS = 10;
+const ANIMATION_DELAY = 2000;
+const API_TIMEOUT = 30000;
 // Global constant for section colors
 const SECTION_COLORS = {
     "Task Complexity Assessment": "primary",
@@ -66,7 +79,7 @@ const SectionIcon = ({ section, size })=>{
                 size: size
             }, void 0, false, {
                 fileName: "[project]/src/app/page.js",
-                lineNumber: 54,
+                lineNumber: 61,
                 columnNumber: 14
             }, this);
         case "Challenges & Solutions":
@@ -74,7 +87,7 @@ const SectionIcon = ({ section, size })=>{
                 size: size
             }, void 0, false, {
                 fileName: "[project]/src/app/page.js",
-                lineNumber: 56,
+                lineNumber: 63,
                 columnNumber: 14
             }, this);
         case "AI Assistance & Usage":
@@ -82,7 +95,7 @@ const SectionIcon = ({ section, size })=>{
                 size: size
             }, void 0, false, {
                 fileName: "[project]/src/app/page.js",
-                lineNumber: 58,
+                lineNumber: 65,
                 columnNumber: 14
             }, this);
         case "Technical Assessment":
@@ -90,7 +103,7 @@ const SectionIcon = ({ section, size })=>{
                 size: size
             }, void 0, false, {
                 fileName: "[project]/src/app/page.js",
-                lineNumber: 60,
+                lineNumber: 67,
                 columnNumber: 14
             }, this);
         default:
@@ -98,13 +111,13 @@ const SectionIcon = ({ section, size })=>{
                 size: size
             }, void 0, false, {
                 fileName: "[project]/src/app/page.js",
-                lineNumber: 62,
+                lineNumber: 69,
                 columnNumber: 14
             }, this);
     }
 };
 _c = SectionIcon;
-// Helper: For sliders that use descriptive labels (e.g. "Very Easy", etc.)
+// Helper: For sliders that use descriptive labels.
 const getSliderLabel = (value)=>{
     if (value >= 1 && value <= 20) return "Very Easy";
     if (value >= 21 && value <= 40) return "Easy";
@@ -113,21 +126,21 @@ const getSliderLabel = (value)=>{
     if (value >= 81 && value <= 100) return "Very Challenging";
     return "-";
 };
-// Helper: For q8: map slider values (1-100) to integer labels ("1" to "10")
+// Helper: For question 8, map slider values (1-100) to integer labels ("1" to "10").
 const getIntSliderLabel = (value)=>{
     return Math.ceil(value / 10).toString();
 };
 // Static questions configuration – all questions are required.
+// No question IDs are used; answers are stored by question number.
 const staticQuestions = [
     {
-        id: "q1",
         section: "Task Complexity Assessment",
         question: "How challenging was this task for you? (Scale 1-5)",
         inputType: "slider",
         min: 1,
         max: 100,
         step: 1,
-        defaultValue: 0,
+        defaultValue: 50,
         labels: [
             "Very Easy",
             "Easy",
@@ -138,7 +151,6 @@ const staticQuestions = [
         required: true
     },
     {
-        id: "q2",
         section: "Task Complexity Assessment",
         question: "Which aspects were most complex?",
         inputType: "text",
@@ -146,7 +158,6 @@ const staticQuestions = [
         required: true
     },
     {
-        id: "q3",
         section: "Task Complexity Assessment",
         question: "What prior experience helped you?",
         inputType: "text",
@@ -154,7 +165,6 @@ const staticQuestions = [
         required: true
     },
     {
-        id: "q4",
         section: "Challenges & Solutions",
         question: "What were your main technical challenges?",
         inputType: "text",
@@ -162,7 +172,6 @@ const staticQuestions = [
         required: true
     },
     {
-        id: "q5",
         section: "Challenges & Solutions",
         question: "How did you overcome these challenges?",
         inputType: "text",
@@ -170,7 +179,6 @@ const staticQuestions = [
         required: true
     },
     {
-        id: "q6",
         section: "AI Assistance & Usage",
         question: "Which AI tools did you use during development? (ChatGPT, Gemini, GitHub Copilot, etc.)",
         inputType: "text",
@@ -178,7 +186,6 @@ const staticQuestions = [
         required: true
     },
     {
-        id: "q7",
         section: "AI Assistance & Usage",
         question: "How did you leverage these AI tools?",
         inputType: "text",
@@ -186,14 +193,13 @@ const staticQuestions = [
         required: true
     },
     {
-        id: "q8",
         section: "AI Assistance & Usage",
         question: "On a scale of 1-10, how dependent was your solution on AI assistance?",
         inputType: "slider",
         min: 1,
         max: 100,
         step: 1,
-        defaultValue: 0,
+        defaultValue: 50,
         labels: [
             "1",
             "2",
@@ -211,34 +217,22 @@ const staticQuestions = [
 ];
 function QuizPage() {
     _s();
-    // Constants
-    const TOTAL_QUESTIONS = 13;
-    const DEFAULT_TIMER_SECONDS = 10;
-    const ANIMATION_DELAY = 2000;
-    const API_TIMEOUT = 30000;
-    // State management
-    const [sessionId, setSessionId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("unknown");
-    const [questions, setQuestions] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(staticQuestions);
+    const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
+    // Use Zustand store to persist quiz state across refreshes
+    const { quizData, addQuizData, currentQuestionIndex, setCurrentQuestionIndex, timer, setTimer } = useQuizStore();
+    // Local state for current question answers
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
-    const [currentQuestionIndex, setCurrentQuestionIndex] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
     const [textAnswer, setTextAnswer] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
     const [selectedOption, setSelectedOption] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
     const [sliderValue, setSliderValue] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
-    const [timer, setTimer] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(DEFAULT_TIMER_SECONDS);
     const [isTimerActive, setIsTimerActive] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
     const [isTimerWarning, setIsTimerWarning] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
-    const [answers, setAnswers] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({});
-    const [messages, setMessages] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
     const [validationError, setValidationError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
-    const [isProcessing, setIsProcessing] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
-    const [processingStatus, setProcessingStatus] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
-    const [processingProgress, setProcessingProgress] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
-    const [analysisResults, setAnalysisResults] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({});
-    const [showProcessingModal, setShowProcessingModal] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [fadeAnimation, setFadeAnimation] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [showHint, setShowHint] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [hint, setHint] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
+    const [dynamicQuestionsLoaded, setDynamicQuestionsLoaded] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [showReviewModal, setShowReviewModal] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     // Computed values
     const progressPercentage = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
@@ -254,7 +248,7 @@ function QuizPage() {
     }["QuizPage.useMemo[sectionColor]"], [
         currentQuestion
     ]);
-    // Determine the input type
+    // Determine input type
     const getInputType = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
         "QuizPage.useCallback[getInputType]": ()=>{
             if (!currentQuestion) return null;
@@ -264,16 +258,6 @@ function QuizPage() {
         currentQuestion
     ]);
     const inputType = getInputType();
-    // Load sessionId from localStorage on mount
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
-        "QuizPage.useEffect": ()=>{
-            const storedId = localStorage.getItem("sessionId") || `quiz-${Date.now()}`;
-            setSessionId(storedId);
-            if (!localStorage.getItem("sessionId")) {
-                localStorage.setItem("sessionId", storedId);
-            }
-        }
-    }["QuizPage.useEffect"], []);
     // Set initial slider value when question changes
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "QuizPage.useEffect": ()=>{
@@ -288,7 +272,7 @@ function QuizPage() {
         currentQuestion,
         inputType
     ]);
-    // Timer functionality
+    // Timer functionality: update timer in store so that it persists on refresh.
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "QuizPage.useEffect": ()=>{
             let interval = null;
@@ -296,14 +280,11 @@ function QuizPage() {
                 interval = setInterval({
                     "QuizPage.useEffect": ()=>{
                         setTimer({
-                            "QuizPage.useEffect": (prev)=>{
-                                const newValue = prev - 1;
-                                if (newValue <= 10 && newValue > 0) {
-                                    setIsTimerWarning(true);
-                                }
-                                return newValue;
-                            }
+                            "QuizPage.useEffect": (prev)=>prev - 1
                         }["QuizPage.useEffect"]);
+                        if (timer - 1 <= 10 && timer - 1 > 0) {
+                            setIsTimerWarning(true);
+                        }
                     }
                 }["QuizPage.useEffect"], 1000);
             } else if (timer === 0) {
@@ -325,9 +306,10 @@ function QuizPage() {
         inputType,
         selectedOption,
         textAnswer,
-        sliderValue
+        sliderValue,
+        setTimer
     ]);
-    // Reset state when question changes
+    // Reset local UI state when question changes (store values remain persisted)
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "QuizPage.useEffect": ()=>{
             setTimer(DEFAULT_TIMER_SECONDS);
@@ -349,188 +331,117 @@ function QuizPage() {
             })["QuizPage.useEffect"];
         }
     }["QuizPage.useEffect"], [
-        currentQuestionIndex
+        currentQuestionIndex,
+        setTimer
     ]);
-    // Fetch dynamic question from API
+    // (Optional) Load dynamic questions after the static ones
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "QuizPage.useEffect": ()=>{
+            const shouldLoadDynamicQuestions = currentQuestionIndex === staticQuestions.length - 1 && !dynamicQuestionsLoaded && Object.keys(quizData).length === staticQuestions.length - 1;
+            if (shouldLoadDynamicQuestions) {
+                const loadAllDynamicQuestions = {
+                    "QuizPage.useEffect.loadAllDynamicQuestions": async ()=>{
+                        try {
+                            console.log("Loading dynamic questions...");
+                            setLoading(true);
+                            let updatedQuestions = [
+                                ...questions
+                            ];
+                            for(let i = 0; i < TOTAL_QUESTIONS - staticQuestions.length; i++){
+                                const dynamicQuestion = await fetchDynamicQuestion();
+                                if (dynamicQuestion) {
+                                    updatedQuestions.push(dynamicQuestion);
+                                } else {
+                                    throw new Error("Failed to fetch a dynamic question");
+                                }
+                            }
+                            setQuestions(updatedQuestions);
+                            setDynamicQuestionsLoaded(true);
+                            setLoading(false);
+                            console.log("Dynamic questions loaded.");
+                        } catch (err) {
+                            console.error("Error loading dynamic questions:", err);
+                            setError(`Failed to load dynamic questions: ${err.message}`);
+                            setLoading(false);
+                        }
+                    }
+                }["QuizPage.useEffect.loadAllDynamicQuestions"];
+                loadAllDynamicQuestions();
+            }
+        }
+    }["QuizPage.useEffect"], [
+        currentQuestionIndex,
+        dynamicQuestionsLoaded,
+        quizData,
+        questions
+    ]);
+    // Fetch dynamic question from API (minimal version)
     const fetchDynamicQuestion = async ()=>{
         try {
-            setLoading(true);
-            setError(null);
-            const response = await fetchWithTimeout("/api/generateQuestion", {
+            const response = await fetch("/api/generateQuestion", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    messages,
                     previousQuestions: questions.map((q)=>q.question),
                     sessionId
                 })
             });
-            if (!response || !response.question) {
+            const data = await response.json();
+            if (!data || !data.question) {
                 throw new Error("Invalid question data received from API");
             }
-            let newInputType = "text";
-            let additionalProps = {
-                placeholder: response.placeholder || "Type your answer here..."
-            };
-            if (response.options && response.options.length > 0) {
-                const isScalingQuestion = response.options.every((opt)=>!isNaN(parseInt(opt)) || !isNaN(parseInt(opt.split(" - ")[0])) && opt.includes(" - "));
-                if (isScalingQuestion) {
-                    newInputType = "slider";
-                    let min, max, labels;
-                    if (response.options[0].includes(" - ")) {
-                        min = parseInt(response.options[0].split(" - ")[0]);
-                        max = parseInt(response.options[response.options.length - 1].split(" - ")[0]);
-                        labels = response.options;
-                    } else {
-                        min = parseInt(response.options[0]);
-                        max = parseInt(response.options[response.options.length - 1]);
-                        labels = response.options;
-                    }
-                    additionalProps = {
-                        min,
-                        max,
-                        step: 1,
-                        defaultValue: Math.floor((min + max) / 2),
-                        labels
-                    };
-                } else {
-                    newInputType = "radio";
-                    additionalProps = {
-                        options: response.options
-                    };
-                }
-            }
-            const questionData = {
-                id: `q${staticQuestions.length + messages.length - staticQuestions.length + 1}`,
-                section: response.section || "Technical Assessment",
-                question: response.question,
-                inputType: newInputType,
-                ...additionalProps,
+            return {
+                section: data.section || "Technical Assessment",
+                question: data.question,
+                inputType: data.inputType || "text",
+                placeholder: data.placeholder || "Type your answer here...",
+                options: data.options || undefined,
+                min: data.min,
+                max: data.max,
+                step: data.step || 1,
+                defaultValue: data.defaultValue,
+                labels: data.labels,
                 required: true,
-                hint: response.hint || ""
+                hint: data.hint || ""
             };
-            setLoading(false);
-            return questionData;
         } catch (err) {
-            setLoading(false);
-            setError(`Failed to fetch the next question: ${err.message}`);
             console.error("Error fetching dynamic question:", err);
-            return null;
+            throw new Error(`Failed to fetch the next question: ${err.message}`);
         }
     };
-    // Process final analysis by calling multiple APIs
-    const processFinalAnalysis = async (finalAnswers, messageHistory)=>{
-        setIsProcessing(true);
-        setShowProcessingModal(true);
-        setProcessingProgress(0);
-        try {
-            setProcessingStatus("Submitting quiz responses...");
-            await submitQuizData(finalAnswers, messageHistory);
-            setProcessingProgress(20);
-            setProcessingStatus("Evaluating responses...");
-            const evaluateResponsesResult = await fetchWithTimeout("/api/evaluateResponses", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    messages: messageHistory,
-                    sessionId
-                })
-            });
-            setAnalysisResults((prev)=>({
-                    ...prev,
-                    evaluateResponses: evaluateResponsesResult
-                }));
-            setProcessingProgress(40);
-            setProcessingStatus("Analyzing code submissions...");
-            const codeAnalysisResult = await fetchWithTimeout("/api/codeAnalysis", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    answers: finalAnswers,
-                    sessionId
-                })
-            });
-            setAnalysisResults((prev)=>({
-                    ...prev,
-                    codeAnalysis: codeAnalysisResult
-                }));
-            setProcessingProgress(60);
-            setProcessingStatus("Analyzing screen recordings...");
-            const screenRecordingAnalysisResult = await fetchWithTimeout("/api/screenRecordingAnalysis", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    answers: finalAnswers,
-                    sessionId
-                })
-            });
-            setAnalysisResults((prev)=>({
-                    ...prev,
-                    screenRecordingAnalysis: screenRecordingAnalysisResult
-                }));
-            setProcessingProgress(80);
-            setProcessingStatus("Generating comprehensive analysis...");
-            const finalAnalysisResult = await fetchWithTimeout("/api/finalAnalysis", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    responses: evaluateResponsesResult,
-                    codeAnalysis: codeAnalysisResult,
-                    screenRecordingAnalysis: screenRecordingAnalysisResult,
-                    sessionId
-                })
-            });
-            setAnalysisResults((prev)=>({
-                    ...prev,
-                    finalAnalysis: finalAnalysisResult
-                }));
-            setProcessingProgress(100);
-            setProcessingStatus("Analysis complete!");
-            triggerConfetti();
-            setTimeout(()=>{
-                setIsProcessing(false);
-                setShowProcessingModal(false);
-                window.location.href = "/results";
-            }, ANIMATION_DELAY);
-        } catch (err) {
-            console.error("Error processing final analysis:", err);
-            setProcessingStatus(`Error: ${err.message}. Please try again.`);
-            setIsProcessing(false);
+    // Handle moving to next question.
+    // Answers are stored in the Zustand store using the question number (1-based).
+    const handleNextQuestion = async ()=>{
+        if (!validateAnswer()) return;
+        setValidationError("");
+        const currentAnswer = getCurrentAnswer();
+        // Save answer in the store using question number as key
+        addQuizData(currentQuestionIndex + 1, {
+            questionNumber: currentQuestionIndex + 1,
+            question: currentQuestion.question,
+            ...inputType === "radio" && {
+                options: currentQuestion.options
+            },
+            ...inputType === "slider" && {
+                options: currentQuestion.labels
+            },
+            response: currentAnswer
+        });
+        const nextIndex = currentQuestionIndex + 1;
+        if (nextIndex < TOTAL_QUESTIONS) {
+            setCurrentQuestionIndex(nextIndex);
+        } else {
+            // When finished, the answers are already stored; simply route to /results.
+            router.push("/results");
         }
     };
-    // Utility function for fetching with timeout protection
-    const fetchWithTimeout = async (url, options, timeout = API_TIMEOUT)=>{
-        const controller = new AbortController();
-        const timeoutId = setTimeout(()=>controller.abort(), timeout);
-        try {
-            const response = await fetch(url, {
-                ...options,
-                signal: controller.signal
-            });
-            clearTimeout(timeoutId);
-            if (!response.ok) {
-                throw new Error(`API error: ${response.status} ${response.statusText}`);
-            }
-            return await response.json();
-        } catch (err) {
-            clearTimeout(timeoutId);
-            if (err.name === "AbortError") {
-                throw new Error("Request timed out. Please try again.");
-            }
-            throw err;
-        }
+    // Handle finish quiz from the review modal by routing to the results page.
+    const handleFinishQuiz = ()=>{
+        router.push("/results");
     };
-    // Get the current answer based on input type
+    // Get the current answer based on input type.
     const getCurrentAnswer = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
         "QuizPage.useCallback[getCurrentAnswer]": ()=>{
             switch(inputType){
@@ -549,7 +460,7 @@ function QuizPage() {
         sliderValue,
         textAnswer
     ]);
-    // Validate the current answer
+    // Validate the current answer.
     const validateAnswer = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
         "QuizPage.useCallback[validateAnswer]": ()=>{
             if (!currentQuestion) return false;
@@ -562,7 +473,10 @@ function QuizPage() {
                     }
                     break;
                 case "slider":
-                    if (sliderValue === null) {
+                    if ([
+                        null,
+                        "-"
+                    ].includes(sliderValue)) {
                         setValidationError("Please select a value on the scale.");
                         return false;
                     }
@@ -589,132 +503,14 @@ function QuizPage() {
         textAnswer,
         isQuestionRequired
     ]);
-    // Handle moving to next question or finishing the quiz
-    const handleNextQuestion = async ()=>{
-        if (!validateAnswer()) return;
-        setValidationError("");
-        const currentAnswer = getCurrentAnswer();
-        setAnswers((prev)=>({
-                ...prev,
-                [currentQuestion.id]: currentAnswer
-            }));
-        // Build the message content.
-        // For generic (static) questions (first 8), include only QuestionNumber, Question, Options, and Response.
-        // For dynamic questions, include all details.
-        let messageContent = {};
-        if (currentQuestionIndex < staticQuestions.length) {
-            messageContent = {
-                questionNumber: currentQuestionIndex + 1,
-                question: currentQuestion.question,
-                ...inputType === "radio" && {
-                    options: currentQuestion.options
-                },
-                ...inputType === "slider" && {
-                    options: currentQuestion.labels
-                },
-                response: currentAnswer
-            };
-        } else {
-            messageContent = {
-                questionId: currentQuestion.id,
-                section: currentQuestion.section,
-                question: currentQuestion.question,
-                ...inputType === "radio" && {
-                    options: currentQuestion.options
-                },
-                ...inputType === "slider" && {
-                    min: currentQuestion.min,
-                    max: currentQuestion.max,
-                    labels: currentQuestion.labels
-                },
-                response: currentAnswer
-            };
-        }
-        const messageObject = {
-            role: "user",
-            content: JSON.stringify(messageContent)
-        };
-        const updatedMessages = [
-            ...messages,
-            messageObject
-        ];
-        setMessages(updatedMessages);
-        const nextIndex = currentQuestionIndex + 1;
-        if (nextIndex < TOTAL_QUESTIONS) {
-            if (nextIndex >= staticQuestions.length) {
-                setLoading(true);
-                const dynamicQuestion = await fetchDynamicQuestion();
-                if (dynamicQuestion) {
-                    setQuestions((prev)=>[
-                            ...prev,
-                            dynamicQuestion
-                        ]);
-                    setCurrentQuestionIndex(nextIndex);
-                    setLoading(false);
-                } else {
-                    setLoading(false);
-                    return;
-                }
-            } else {
-                setCurrentQuestionIndex(nextIndex);
-            }
-        } else {
-            await processFinalAnalysis({
-                ...answers,
-                [currentQuestion.id]: currentAnswer
-            }, updatedMessages);
-        }
-    };
-    // Define handleFinishQuiz for the Review Answers Modal
-    const handleFinishQuiz = async ()=>{
-        await processFinalAnalysis(answers, messages);
-    };
-    // Submit quiz data to API
-    const submitQuizData = async (finalAnswers, messageHistory)=>{
-        try {
-            const messagesResponse = await fetchWithTimeout("/api/submit-messages", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    messages: messageHistory,
-                    sessionId
-                })
-            });
-            if (!messagesResponse) {
-                throw new Error("Failed to submit message history");
-            }
-            const answersResponse = await fetchWithTimeout("/api/submit-answers", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    answers: finalAnswers,
-                    sessionId
-                })
-            });
-            if (!answersResponse) {
-                throw new Error("Failed to submit answers");
-            }
-            return {
-                messagesResult: messagesResponse,
-                answersResult: answersResponse
-            };
-        } catch (err) {
-            console.error("Error submitting quiz data:", err);
-            throw err;
-        }
-    };
-    // Format time display
+    // Format time display.
     const formatTime = (seconds)=>{
         if (seconds < 60) return `${seconds}s`;
         const minutes = Math.floor(seconds / 60);
         const remainingSeconds = seconds % 60;
         return `${minutes}:${remainingSeconds < 10 ? "0" : ""}${remainingSeconds}`;
     };
-    // Render slider labels below the slider
+    // Render slider labels below the slider.
     const renderSliderLabels = ()=>{
         if (!currentQuestion || !currentQuestion.labels) return null;
         return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -729,24 +525,24 @@ function QuizPage() {
                     children: displayText
                 }, index, false, {
                     fileName: "[project]/src/app/page.js",
-                    lineNumber: 645,
+                    lineNumber: 450,
                     columnNumber: 13
                 }, this);
             })
         }, void 0, false, {
             fileName: "[project]/src/app/page.js",
-            lineNumber: 639,
+            lineNumber: 444,
             columnNumber: 7
         }, this);
     };
-    // Toggle hint display
+    // Toggle hint display.
     const toggleHint = ()=>{
         if (!showHint && currentQuestion?.hint) {
             setHint(currentQuestion.hint || "No hint available for this question.");
         }
         setShowHint(!showHint);
     };
-    // Trigger confetti effect on completion
+    // Trigger confetti effect on completion.
     const triggerConfetti = ()=>{
         if ("object" !== "undefined" && __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$canvas$2d$confetti$2f$dist$2f$confetti$2e$module$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"]) {
             const end = Date.now() + 1500;
@@ -781,7 +577,7 @@ function QuizPage() {
             })();
         }
     };
-    // Render the input component based on question type
+    // Render the input component based on question type.
     const renderQuestionInput = ()=>{
         if (!currentQuestion) return null;
         switch(inputType){
@@ -803,12 +599,12 @@ function QuizPage() {
                             children: option.includes(" - ") ? option.split(" - ")[0] : option
                         }, index, false, {
                             fileName: "[project]/src/app/page.js",
-                            lineNumber: 709,
+                            lineNumber: 514,
                             columnNumber: 15
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/src/app/page.js",
-                    lineNumber: 699,
+                    lineNumber: 504,
                     columnNumber: 11
                 }, this);
             case "slider":
@@ -823,15 +619,15 @@ function QuizPage() {
                                     children: currentQuestion.min
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/page.js",
-                                    lineNumber: 728,
+                                    lineNumber: 533,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     className: "text-lg font-bold text-primary",
-                                    children: sliderValue !== null && currentQuestion.labels ? currentQuestion.id === "q8" ? getIntSliderLabel(sliderValue) : getSliderLabel(sliderValue) : "-"
+                                    children: sliderValue !== null && currentQuestion.labels ? currentQuestionIndex + 1 === 8 ? getIntSliderLabel(sliderValue) : getSliderLabel(sliderValue) : "-"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/page.js",
-                                    lineNumber: 731,
+                                    lineNumber: 536,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -839,17 +635,17 @@ function QuizPage() {
                                     children: currentQuestion.max
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/page.js",
-                                    lineNumber: 738,
+                                    lineNumber: 543,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/page.js",
-                            lineNumber: 727,
+                            lineNumber: 532,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$slider$2f$dist$2f$chunk$2d$O6IB4TCE$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__slider_default__as__Slider$3e$__["Slider"], {
-                            "aria-labelledby": `question-${currentQuestion.id}`,
+                            "aria-labelledby": `question-${currentQuestionIndex + 1}`,
                             step: currentQuestion.step || 1,
                             min: currentQuestion.min,
                             max: currentQuestion.max,
@@ -876,20 +672,20 @@ function QuizPage() {
                             })
                         }, void 0, false, {
                             fileName: "[project]/src/app/page.js",
-                            lineNumber: 742,
+                            lineNumber: 547,
                             columnNumber: 13
                         }, this),
                         renderSliderLabels()
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/page.js",
-                    lineNumber: 726,
+                    lineNumber: 531,
                     columnNumber: 11
                 }, this);
             case "text":
             default:
                 return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$input$2f$dist$2f$chunk$2d$XF3QSREE$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__textarea_default__as__Textarea$3e$__["Textarea"], {
-                    "aria-labelledby": `question-${currentQuestion.id}`,
+                    "aria-labelledby": `question-${currentQuestionIndex + 1}`,
                     placeholder: currentQuestion.placeholder || "Type your answer here...",
                     value: textAnswer,
                     onChange: (e)=>{
@@ -905,7 +701,7 @@ function QuizPage() {
                     }
                 }, void 0, false, {
                     fileName: "[project]/src/app/page.js",
-                    lineNumber: 779,
+                    lineNumber: 584,
                     columnNumber: 11
                 }, this);
         }
@@ -922,26 +718,26 @@ function QuizPage() {
                         size: "lg"
                     }, void 0, false, {
                         fileName: "[project]/src/app/page.js",
-                        lineNumber: 807,
+                        lineNumber: 612,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                         className: "mt-4 text-lg font-medium text-gray-700 animate-pulse",
-                        children: "Preparing your next question..."
+                        children: currentQuestionIndex === staticQuestions.length - 1 && !dynamicQuestionsLoaded ? "Loading all remaining questions..." : "Preparing your next question..."
                     }, void 0, false, {
                         fileName: "[project]/src/app/page.js",
-                        lineNumber: 808,
+                        lineNumber: 613,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/page.js",
-                lineNumber: 806,
+                lineNumber: 611,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/app/page.js",
-            lineNumber: 805,
+            lineNumber: 610,
             columnNumber: 7
         }, this);
     }
@@ -960,7 +756,7 @@ function QuizPage() {
                                 className: "text-red-600"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/page.js",
-                                lineNumber: 822,
+                                lineNumber: 630,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -968,13 +764,13 @@ function QuizPage() {
                                 children: "Error Occurred"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/page.js",
-                                lineNumber: 823,
+                                lineNumber: 631,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/page.js",
-                        lineNumber: 821,
+                        lineNumber: 629,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$card$2f$dist$2f$chunk$2d$5ALFRFZW$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__card_body_default__as__CardBody$3e$__["CardBody"], {
@@ -985,7 +781,7 @@ function QuizPage() {
                                 children: error
                             }, void 0, false, {
                                 fileName: "[project]/src/app/page.js",
-                                lineNumber: 826,
+                                lineNumber: 634,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$button$2f$dist$2f$chunk$2d$G5TSEPD3$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__button_default__as__Button$3e$__["Button"], {
@@ -995,31 +791,31 @@ function QuizPage() {
                                     size: 18
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/page.js",
-                                    lineNumber: 830,
+                                    lineNumber: 638,
                                     columnNumber: 29
                                 }, void 0),
                                 className: "bg-gradient-to-r from-blue-600 to-blue-800 shadow-md hover:shadow-lg transition-all duration-200",
                                 children: "Try Again"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/page.js",
-                                lineNumber: 827,
+                                lineNumber: 635,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/page.js",
-                        lineNumber: 825,
+                        lineNumber: 633,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/page.js",
-                lineNumber: 820,
+                lineNumber: 628,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/app/page.js",
-            lineNumber: 819,
+            lineNumber: 627,
             columnNumber: 7
         }, this);
     }
@@ -1037,7 +833,7 @@ function QuizPage() {
                             className: "mx-auto mb-4 text-yellow-500"
                         }, void 0, false, {
                             fileName: "[project]/src/app/page.js",
-                            lineNumber: 847,
+                            lineNumber: 655,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1045,7 +841,7 @@ function QuizPage() {
                             children: "No Questions Available"
                         }, void 0, false, {
                             fileName: "[project]/src/app/page.js",
-                            lineNumber: 848,
+                            lineNumber: 656,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1053,7 +849,7 @@ function QuizPage() {
                             children: "Unable to load questions. Please refresh the page or contact support."
                         }, void 0, false, {
                             fileName: "[project]/src/app/page.js",
-                            lineNumber: 849,
+                            lineNumber: 657,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$button$2f$dist$2f$chunk$2d$G5TSEPD3$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__button_default__as__Button$3e$__["Button"], {
@@ -1063,30 +859,30 @@ function QuizPage() {
                                 size: 18
                             }, void 0, false, {
                                 fileName: "[project]/src/app/page.js",
-                                lineNumber: 856,
+                                lineNumber: 664,
                                 columnNumber: 29
                             }, void 0),
                             className: "shadow-md",
                             children: "Refresh Page"
                         }, void 0, false, {
                             fileName: "[project]/src/app/page.js",
-                            lineNumber: 853,
+                            lineNumber: 661,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/page.js",
-                    lineNumber: 846,
+                    lineNumber: 654,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/page.js",
-                lineNumber: 845,
+                lineNumber: 653,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/app/page.js",
-            lineNumber: 844,
+            lineNumber: 652,
             columnNumber: 7
         }, this);
     }
@@ -1102,7 +898,7 @@ function QuizPage() {
                         children: "Crayon Gen-AI Internship Test"
                     }, void 0, false, {
                         fileName: "[project]/src/app/page.js",
-                        lineNumber: 871,
+                        lineNumber: 679,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1110,13 +906,13 @@ function QuizPage() {
                         children: "Test your skills and understanding."
                     }, void 0, false, {
                         fileName: "[project]/src/app/page.js",
-                        lineNumber: 874,
+                        lineNumber: 682,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/page.js",
-                lineNumber: 870,
+                lineNumber: 678,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1134,7 +930,7 @@ function QuizPage() {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/page.js",
-                                lineNumber: 880,
+                                lineNumber: 688,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1147,13 +943,13 @@ function QuizPage() {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/page.js",
-                                lineNumber: 883,
+                                lineNumber: 691,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/page.js",
-                        lineNumber: 879,
+                        lineNumber: 687,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$progress$2f$dist$2f$chunk$2d$5A5NBK2V$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__progress_default__as__Progress$3e$__["Progress"], {
@@ -1170,13 +966,13 @@ function QuizPage() {
                         }
                     }, void 0, false, {
                         fileName: "[project]/src/app/page.js",
-                        lineNumber: 887,
+                        lineNumber: 695,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/page.js",
-                lineNumber: 878,
+                lineNumber: 686,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$card$2f$dist$2f$chunk$2d$46NETW2U$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__card_default__as__Card$3e$__["Card"], {
@@ -1198,18 +994,18 @@ function QuizPage() {
                                         size: 20
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/page.js",
-                                        lineNumber: 913,
+                                        lineNumber: 721,
                                         columnNumber: 17
                                     }, void 0),
                                     children: currentQuestion?.section || "Question"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/page.js",
-                                    lineNumber: 906,
+                                    lineNumber: 714,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/page.js",
-                                lineNumber: 905,
+                                lineNumber: 713,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1221,7 +1017,7 @@ function QuizPage() {
                                         className: isTimerWarning ? "text-red-500 animate-pulse" : ""
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/page.js",
-                                        lineNumber: 923,
+                                        lineNumber: 731,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1229,19 +1025,19 @@ function QuizPage() {
                                         children: formatTime(timer)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/page.js",
-                                        lineNumber: 927,
+                                        lineNumber: 735,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/page.js",
-                                lineNumber: 919,
+                                lineNumber: 727,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/page.js",
-                        lineNumber: 904,
+                        lineNumber: 712,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$card$2f$dist$2f$chunk$2d$5ALFRFZW$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__card_body_default__as__CardBody$3e$__["CardBody"], {
@@ -1249,12 +1045,11 @@ function QuizPage() {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].h3, {
                                 layout: true,
-                                id: `question-${currentQuestion.id}`,
                                 className: "text-xl sm:text-2xl font-semibold text-gray-900 mb-5",
                                 children: currentQuestion?.question
                             }, void 0, false, {
                                 fileName: "[project]/src/app/page.js",
-                                lineNumber: 937,
+                                lineNumber: 745,
                                 columnNumber: 11
                             }, this),
                             validationError && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1280,20 +1075,20 @@ function QuizPage() {
                                         size: 18
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/page.js",
-                                        lineNumber: 953,
+                                        lineNumber: 760,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         children: validationError
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/page.js",
-                                        lineNumber: 954,
+                                        lineNumber: 761,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/page.js",
-                                lineNumber: 945,
+                                lineNumber: 752,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1301,7 +1096,7 @@ function QuizPage() {
                                 children: renderQuestionInput()
                             }, void 0, false, {
                                 fileName: "[project]/src/app/page.js",
-                                lineNumber: 957,
+                                lineNumber: 764,
                                 columnNumber: 11
                             }, this),
                             currentQuestion.hint && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1312,7 +1107,7 @@ function QuizPage() {
                                         children: hint
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/page.js",
-                                        lineNumber: 961,
+                                        lineNumber: 768,
                                         columnNumber: 26
                                     }, void 0),
                                     placement: "bottom",
@@ -1328,28 +1123,28 @@ function QuizPage() {
                                             size: 20
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/page.js",
-                                            lineNumber: 973,
+                                            lineNumber: 780,
                                             columnNumber: 19
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/page.js",
-                                        lineNumber: 964,
+                                        lineNumber: 771,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/page.js",
-                                    lineNumber: 960,
+                                    lineNumber: 767,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/page.js",
-                                lineNumber: 959,
+                                lineNumber: 766,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/page.js",
-                        lineNumber: 936,
+                        lineNumber: 744,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$card$2f$dist$2f$chunk$2d$JHUBASYZ$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__card_footer_default__as__CardFooter$3e$__["CardFooter"], {
@@ -1365,25 +1160,25 @@ function QuizPage() {
                                             size: 16
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/page.js",
-                                            lineNumber: 985,
+                                            lineNumber: 792,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                             children: isLastQuestion ? "This is the final question" : "Answer thoughtfully"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/page.js",
-                                            lineNumber: 986,
+                                            lineNumber: 793,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/page.js",
-                                    lineNumber: 984,
+                                    lineNumber: 791,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/page.js",
-                                lineNumber: 980,
+                                lineNumber: 787,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1394,13 +1189,13 @@ function QuizPage() {
                                         size: 18
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/page.js",
-                                        lineNumber: 998,
+                                        lineNumber: 805,
                                         columnNumber: 19
                                     }, void 0) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
                                         size: 18
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/page.js",
-                                        lineNumber: 1000,
+                                        lineNumber: 807,
                                         columnNumber: 19
                                     }, void 0),
                                     onClick: handleNextQuestion,
@@ -1409,154 +1204,24 @@ function QuizPage() {
                                     children: isLastQuestion ? "Review & Finish" : "Next Question"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/page.js",
-                                    lineNumber: 994,
+                                    lineNumber: 801,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/page.js",
-                                lineNumber: 993,
+                                lineNumber: 800,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/page.js",
-                        lineNumber: 979,
+                        lineNumber: 786,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/page.js",
-                lineNumber: 903,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$modal$2f$dist$2f$chunk$2d$KMN6V4NS$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__modal_default__as__Modal$3e$__["Modal"], {
-                isOpen: showProcessingModal,
-                onClose: ()=>{},
-                hideCloseButton: true,
-                size: "md",
-                className: "bg-white rounded-xl shadow-2xl",
-                backdrop: "blur",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$modal$2f$dist$2f$chunk$2d$RE5G2YMK$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__modal_content_default__as__ModalContent$3e$__["ModalContent"], {
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$modal$2f$dist$2f$chunk$2d$3S23ARPO$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__modal_header_default__as__ModalHeader$3e$__["ModalHeader"], {
-                            className: "flex flex-col items-center border-b border-gray-200 pb-4",
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                className: "text-xl font-semibold text-gray-900",
-                                children: processingProgress < 100 ? "Processing Your Responses" : "Analysis Complete!"
-                            }, void 0, false, {
-                                fileName: "[project]/src/app/page.js",
-                                lineNumber: 1029,
-                                columnNumber: 13
-                            }, this)
-                        }, void 0, false, {
-                            fileName: "[project]/src/app/page.js",
-                            lineNumber: 1028,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$modal$2f$dist$2f$chunk$2d$EPDLEVDR$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__modal_body_default__as__ModalBody$3e$__["ModalBody"], {
-                            className: "py-8 px-6 text-center",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$progress$2f$dist$2f$chunk$2d$5A5NBK2V$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__progress_default__as__Progress$3e$__["Progress"], {
-                                    value: processingProgress,
-                                    color: "primary",
-                                    size: "lg",
-                                    showValueLabel: true,
-                                    valueLabel: `${processingProgress}%`,
-                                    className: "mb-6 h-3 rounded-full",
-                                    "aria-label": "Processing progress",
-                                    classNames: {
-                                        track: "rounded-full bg-gray-200",
-                                        indicator: "rounded-full",
-                                        valueLabel: "text-lg font-semibold text-gray-800"
-                                    }
-                                }, void 0, false, {
-                                    fileName: "[project]/src/app/page.js",
-                                    lineNumber: 1036,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                    className: "text-gray-700 mb-3",
-                                    children: processingStatus
-                                }, void 0, false, {
-                                    fileName: "[project]/src/app/page.js",
-                                    lineNumber: 1050,
-                                    columnNumber: 13
-                                }, this),
-                                isProcessing && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$spinner$2f$dist$2f$chunk$2d$TDOFO53L$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__spinner_default__as__Spinner$3e$__["Spinner"], {
-                                    size: "md",
-                                    color: "primary",
-                                    className: "mt-4"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/app/page.js",
-                                    lineNumber: 1052,
-                                    columnNumber: 15
-                                }, this),
-                                processingProgress === 100 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "mt-6 bg-green-50 p-5 rounded-lg text-center text-green-700 border border-green-200",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2d$big$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle$3e$__["CheckCircle"], {
-                                            size: 32,
-                                            className: "mx-auto mb-3 text-green-600"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/app/page.js",
-                                            lineNumber: 1056,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "font-semibold",
-                                            children: "Your responses have been successfully analyzed!"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/app/page.js",
-                                            lineNumber: 1060,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-sm text-gray-600 mt-1",
-                                            children: "Redirecting to results page shortly..."
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/app/page.js",
-                                            lineNumber: 1063,
-                                            columnNumber: 17
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/src/app/page.js",
-                                    lineNumber: 1055,
-                                    columnNumber: 15
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/src/app/page.js",
-                            lineNumber: 1035,
-                            columnNumber: 11
-                        }, this),
-                        !isProcessing && processingProgress === 100 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$modal$2f$dist$2f$chunk$2d$QY5NICTW$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__modal_footer_default__as__ModalFooter$3e$__["ModalFooter"], {
-                            className: "border-t border-gray-200 pt-4",
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$button$2f$dist$2f$chunk$2d$G5TSEPD3$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__button_default__as__Button$3e$__["Button"], {
-                                color: "primary",
-                                onClick: ()=>window.location.href = "/results",
-                                className: "w-full rounded-md shadow-md",
-                                size: "lg",
-                                children: "View Detailed Results"
-                            }, void 0, false, {
-                                fileName: "[project]/src/app/page.js",
-                                lineNumber: 1071,
-                                columnNumber: 15
-                            }, this)
-                        }, void 0, false, {
-                            fileName: "[project]/src/app/page.js",
-                            lineNumber: 1070,
-                            columnNumber: 13
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/src/app/page.js",
-                    lineNumber: 1027,
-                    columnNumber: 9
-                }, this)
-            }, void 0, false, {
-                fileName: "[project]/src/app/page.js",
-                lineNumber: 1019,
+                lineNumber: 711,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$modal$2f$dist$2f$chunk$2d$KMN6V4NS$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__modal_default__as__Modal$3e$__["Modal"], {
@@ -1576,7 +1241,7 @@ function QuizPage() {
                                     children: "Review Your Answers"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/page.js",
-                                    lineNumber: 1095,
+                                    lineNumber: 836,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1584,13 +1249,13 @@ function QuizPage() {
                                     children: "Please review your responses before submitting the quiz."
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/page.js",
-                                    lineNumber: 1098,
+                                    lineNumber: 839,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/page.js",
-                            lineNumber: 1094,
+                            lineNumber: 835,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$modal$2f$dist$2f$chunk$2d$EPDLEVDR$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__modal_body_default__as__ModalBody$3e$__["ModalBody"], {
@@ -1608,7 +1273,7 @@ function QuizPage() {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/page.js",
-                                            lineNumber: 1108,
+                                            lineNumber: 849,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1618,26 +1283,26 @@ function QuizPage() {
                                                     children: "Your Answer:"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/page.js",
-                                                    lineNumber: 1112,
+                                                    lineNumber: 853,
                                                     columnNumber: 19
                                                 }, this),
                                                 " ",
-                                                answers[q.id] || "No answer provided"
+                                                quizData[index + 1] && quizData[index + 1].response || "No answer provided"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/page.js",
-                                            lineNumber: 1111,
+                                            lineNumber: 852,
                                             columnNumber: 17
                                         }, this)
                                     ]
-                                }, q.id, true, {
+                                }, index, true, {
                                     fileName: "[project]/src/app/page.js",
-                                    lineNumber: 1104,
+                                    lineNumber: 845,
                                     columnNumber: 15
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/src/app/page.js",
-                            lineNumber: 1102,
+                            lineNumber: 843,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$modal$2f$dist$2f$chunk$2d$QY5NICTW$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__modal_footer_default__as__ModalFooter$3e$__["ModalFooter"], {
@@ -1649,7 +1314,7 @@ function QuizPage() {
                                     children: "Back to Edit"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/page.js",
-                                    lineNumber: 1119,
+                                    lineNumber: 861,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$button$2f$dist$2f$chunk$2d$G5TSEPD3$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__button_default__as__Button$3e$__["Button"], {
@@ -1659,40 +1324,45 @@ function QuizPage() {
                                         size: 18
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/page.js",
-                                        lineNumber: 1129,
+                                        lineNumber: 871,
                                         columnNumber: 27
                                     }, void 0),
                                     children: "Finish Quiz"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/page.js",
-                                    lineNumber: 1126,
+                                    lineNumber: 868,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/page.js",
-                            lineNumber: 1118,
+                            lineNumber: 860,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/page.js",
-                    lineNumber: 1093,
+                    lineNumber: 834,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/page.js",
-                lineNumber: 1085,
+                lineNumber: 826,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/page.js",
-        lineNumber: 869,
+        lineNumber: 677,
         columnNumber: 5
     }, this);
 }
-_s(QuizPage, "dJu7336ClSDHqCDzSfhL4ep2Jto=");
+_s(QuizPage, "xdTWXp3epHlXxcQQjh4IEZ+OzC4=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"],
+        useQuizStore
+    ];
+});
 _c1 = QuizPage;
 var _c, _c1;
 __turbopack_refresh__.register(_c, "SectionIcon");
