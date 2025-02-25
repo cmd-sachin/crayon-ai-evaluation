@@ -1,0 +1,3 @@
+{
+  "/api/generateQuestion/route": "app/api/generateQuestion/route.js"
+}

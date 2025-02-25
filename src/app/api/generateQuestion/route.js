@@ -1,19 +1,29 @@
 import { generateObject } from "ai";
 import { createGoogleGenerativeAI } from "@ai-sdk/google";
 import systemPrompt from "../../prompts/generateQuestions";
+import z from "zod";
 
-const google = createGoogleGenerativeAI({ apiKey: process.env.apiKey });
+const google = createGoogleGenerativeAI({ apiKey: process.env.API_KEY });
 
 export async function POST(req) {
   try {
-    const { messages } = req.json();
-    const result = generateObject({
+    const { messages } = await req.json();
+
+    const result = await generateObject({
       model: google("gemini-2.0-flash-exp"),
       system: systemPrompt,
+      schema: z.object({
+        question: z.string(),
+        options: z.array(z.string()).optional(),
+      }),
       messages: messages,
     });
-    return result.object
-  } catch(error) {
-    return error
+    console.log(messages);
+    return new Response(JSON.stringify(result.object));
+  } catch (error) {
+    console.error("Error in generateQuestion API:", error);
+    return new Response(JSON.stringify({ error: error.message }), {
+      status: 500,
+    });
   }
 }
