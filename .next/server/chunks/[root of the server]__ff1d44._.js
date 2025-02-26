@@ -125,6 +125,7 @@ const google = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$
 async function POST(req) {
     try {
         const { messages } = await req.json();
+        console.log(messages);
         const result = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$ai$2f$dist$2f$index$2e$mjs__$5b$app$2d$route$5d$__$28$ecmascript$29$__$3c$locals$3e$__["generateObject"])({
             model: google("gemini-2.0-flash-exp"),
             system: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$prompts$2f$generateQuestions$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"],
@@ -134,7 +135,7 @@ async function POST(req) {
             }),
             messages: messages
         });
-        console.log(messages);
+        console.log(result.object);
         return new Response(JSON.stringify(result.object));
     } catch (error) {
         console.error("Error in generateQuestion API:", error);

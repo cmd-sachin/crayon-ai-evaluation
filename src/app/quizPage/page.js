@@ -23,13 +23,11 @@ import {
 import {
   Clock,
   AlertCircle,
-  CheckCircle,
   ArrowRight,
   Info,
   BrainCircuit,
   Award,
   RefreshCw,
-  RotateCcw,
   Lightbulb,
   Sparkles,
   HelpCircle,
@@ -38,13 +36,15 @@ import {
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import confetti from "canvas-confetti";
-import { useQuizStore } from "../app/stores/quizStore";
+import { useQuizStore } from "../stores/quizStore";
+import { useFileStore } from "../stores/zipCodeStore";
+import { useQuizHistory } from "../stores/quizHistory";
 
 // Constants
 const TOTAL_QUESTIONS = 13;
 const DEFAULT_TIMER_SECONDS = 10;
 
-// Section colors
+// Section colors mapping
 const SECTION_COLORS = {
   "Task Complexity Assessment": "primary",
   "Challenges & Solutions": "secondary",
@@ -68,22 +68,7 @@ const SectionIcon = ({ section, size }) => {
   }
 };
 
-// Helper: For slider labels.
-const getSliderLabel = (value) => {
-  if (value >= 1 && value <= 20) return "Very Easy";
-  if (value >= 21 && value <= 40) return "Easy";
-  if (value >= 41 && value <= 60) return "Moderate";
-  if (value >= 61 && value <= 80) return "Challenging";
-  if (value >= 81 && value <= 100) return "Very Challenging";
-  return "-";
-};
-
-// For question 8: map slider values (1-100) to integer labels ("1" to "10").
-const getIntSliderLabel = (value) => {
-  return Math.ceil(value / 10).toString();
-};
-
-// Static questions configuration.
+// Updated static questions with discrete slider values.
 const staticQuestions = [
   {
     section: "Task Complexity Assessment",
@@ -92,13 +77,21 @@ const staticQuestions = [
     min: 1,
     max: 100,
     step: 1,
-    defaultValue: 50, // initial value set to 50 (Moderate)
-    labels: [
-      "Very Easy",
-      "Easy",
-      "Moderate",
-      "Challenging",
-      "Very Challenging",
+    defaultValue: 0,
+    valueToLabel: (value) => {
+      if (value <= 20) return "Very Easy";
+      if (value <= 40) return "Easy";
+      if (value <= 60) return "Moderate";
+      if (value <= 80) return "Challenging";
+      if (value > 80) return "Very Challenging";
+      return null;
+    },
+    labelMapping: [
+      { label: "Very Easy", min: 1, max: 20 },
+      { label: "Easy", min: 21, max: 40 },
+      { label: "Moderate", min: 41, max: 60 },
+      { label: "Challenging", min: 61, max: 80 },
+      { label: "Very Challenging", min: 81, max: 100 },
     ],
     required: true,
   },
@@ -154,19 +147,39 @@ const staticQuestions = [
     min: 1,
     max: 100,
     step: 1,
-    defaultValue: 50, // initial value set to 50 (maps to "5")
-    labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
+    defaultValue: 50,
+    valueToLabel: (value) => {
+      const rating = Math.ceil(value / 10);
+      return String(rating);
+    },
+    labelMapping: [
+      { label: "1", min: 1, max: 10 },
+      { label: "2", min: 11, max: 20 },
+      { label: "3", min: 21, max: 30 },
+      { label: "4", min: 31, max: 40 },
+      { label: "5", min: 41, max: 50 },
+      { label: "6", min: 51, max: 60 },
+      { label: "7", min: 61, max: 70 },
+      { label: "8", min: 71, max: 80 },
+      { label: "9", min: 81, max: 90 },
+      { label: "10", min: 91, max: 100 },
+    ],
     required: true,
   },
 ];
 
 export default function QuizPage() {
   const router = useRouter();
-  // Generate a unique sessionId for dynamic question API calls.
   const [sessionId] = useState(() =>
     Math.random().toString(36).substring(2, 15)
   );
-  const [questions, setQuestions] = useState(staticQuestions);
+  const fileStore = useFileStore();
+
+  // Retrieve fileData from the store.
+  const fileData = useFileStore((state) => state.fileData);
+  console.log(fileData);
+
+  // Quiz store state.
   const {
     quizData,
     addQuizData,
@@ -174,9 +187,19 @@ export default function QuizPage() {
     setCurrentQuestionIndex,
     timer,
     setTimer,
+    clearStore,
   } = useQuizStore();
 
-  // Local state variables
+  // Quiz history store state.
+  const { quizHistory, addHistoryEntry } = useQuizHistory();
+
+  // Initialize messages state with fileData from the store.
+  const [messages, setMessages] = useState(() => [
+    { role: "user", content: JSON.stringify(fileData) },
+  ]);
+
+  // Local state variables.
+  const [questions, setQuestions] = useState(staticQuestions);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [textAnswer, setTextAnswer] = useState("");
@@ -188,10 +211,9 @@ export default function QuizPage() {
   const [fadeAnimation, setFadeAnimation] = useState(false);
   const [showHint, setShowHint] = useState(false);
   const [hint, setHint] = useState("");
-  const [dynamicQuestionsLoaded, setDynamicQuestionsLoaded] = useState(false);
+  const [loadingNextQuestion, setLoadingNextQuestion] = useState(false);
   const [showReviewModal, setShowReviewModal] = useState(false);
 
-  // Computed values
   const progressPercentage = useMemo(
     () => ((currentQuestionIndex + 1) / TOTAL_QUESTIONS) * 100,
     [currentQuestionIndex]
@@ -204,7 +226,6 @@ export default function QuizPage() {
     [currentQuestion]
   );
 
-  // Determine input type
   const getInputType = useCallback(() => {
     if (!currentQuestion) return null;
     return (
@@ -216,7 +237,6 @@ export default function QuizPage() {
   }, [currentQuestion]);
   const inputType = getInputType();
 
-  // Set initial slider value when question changes
   useEffect(() => {
     if (
       currentQuestion &&
@@ -229,37 +249,26 @@ export default function QuizPage() {
     }
   }, [currentQuestionIndex, currentQuestion, inputType]);
 
-  // Countdown timer: decrement timer every second when active.
   useEffect(() => {
     if (isTimerActive) {
       const intervalId = setInterval(() => {
-        setTimer((prevTimer) => {
-          if (prevTimer > 0) return prevTimer - 1;
-          return 0;
-        });
+        setTimer((prevTimer) => (prevTimer > 0 ? prevTimer - 1 : 0));
       }, 1000);
       return () => clearInterval(intervalId);
     }
   }, [isTimerActive, setTimer]);
 
-  // Timer warning: if timer reaches 3 seconds or less.
   useEffect(() => {
-    if (timer <= 3) {
-      setIsTimerWarning(true);
-    } else {
-      setIsTimerWarning(false);
-    }
+    setIsTimerWarning(timer <= 3);
   }, [timer]);
 
-  // Auto-submit answer when timer hits 0.
   useEffect(() => {
     if (timer === 0) {
       setIsTimerActive(false);
       handleNextQuestion(true);
     }
-  }, [timer, inputType, selectedOption, textAnswer, sliderValue]);
+  }, [timer]);
 
-  // Reset UI state when question changes.
   useEffect(() => {
     setTimer(DEFAULT_TIMER_SECONDS);
     setIsTimerActive(true);
@@ -276,116 +285,145 @@ export default function QuizPage() {
     return () => clearTimeout(timeout);
   }, [currentQuestionIndex, setTimer]);
 
-  // Load dynamic questions after static ones are done.
-  useEffect(() => {
-    const shouldLoadDynamicQuestions =
-      currentQuestionIndex === staticQuestions.length - 1 &&
-      !dynamicQuestionsLoaded &&
-      Object.keys(quizData).length === staticQuestions.length - 1;
-    if (shouldLoadDynamicQuestions) {
-      const loadAllDynamicQuestions = async () => {
-        try {
-          console.log("Loading dynamic questions...");
-          setLoading(true);
-          let updatedQuestions = [...questions];
-          for (let i = 0; i < TOTAL_QUESTIONS - staticQuestions.length; i++) {
-            const dynamicQuestion = await fetchDynamicQuestion();
-            if (dynamicQuestion) {
-              updatedQuestions.push(dynamicQuestion);
-            } else {
-              throw new Error("Failed to fetch a dynamic question");
-            }
-          }
-          setQuestions(updatedQuestions);
-          setDynamicQuestionsLoaded(true);
-          setLoading(false);
-          console.log("Dynamic questions loaded.");
-        } catch (err) {
-          console.error("Error loading dynamic questions:", err);
-          setError(`Failed to load dynamic questions: ${err.message}`);
-          setLoading(false);
-        }
-      };
-      loadAllDynamicQuestions();
-    }
-  }, [currentQuestionIndex, dynamicQuestionsLoaded, quizData, questions]);
-
-  // Fetch dynamic question from API.
-  const fetchDynamicQuestion = async () => {
+  const fetchNextDynamicQuestion = async () => {
     try {
+      setLoadingNextQuestion(true);
+      console.log("Fetching next dynamic question...");
       const response = await fetch("/api/generateQuestion", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           previousQuestions: questions.map((q) => q.question),
           sessionId,
+          messages,
         }),
       });
       const data = await response.json();
       if (!data || !data.question) {
         throw new Error("Invalid question data received from API");
       }
-      return {
+      const newQuestion = {
         section: data.section || "Technical Assessment",
         question: data.question,
         inputType: data.inputType || "text",
         placeholder: data.placeholder || "Type your answer here...",
         options: data.options || undefined,
-        min: data.min,
-        max: data.max,
+        min: data.min || 1,
+        max: data.max || 100,
         step: data.step || 1,
-        defaultValue: data.defaultValue,
-        labels: data.labels,
+        defaultValue: data.defaultValue || 50,
+        valueToLabel: data.valueToLabel,
+        labelMapping: data.labelMapping,
         required: true,
         hint: data.hint || "",
       };
+      setQuestions((prevQuestions) => [...prevQuestions, newQuestion]);
+      setMessages((prev) => [
+        ...prev,
+        { role: "assistant", content: JSON.stringify(data) },
+      ]);
+      setLoadingNextQuestion(false);
+      console.log("Dynamic question loaded:", newQuestion);
     } catch (err) {
       console.error("Error fetching dynamic question:", err);
-      throw new Error(`Failed to fetch the next question: ${err.message}`);
+      setError(`Failed to fetch the next question: ${err.message}`);
+      setLoadingNextQuestion(false);
     }
   };
 
-  // Handle moving to next question.
-  // The autoSubmit flag bypasses validation when timer expires.
+  const getSliderLabel = useCallback(
+    (value) => {
+      if (!currentQuestion || !value) return "";
+      if (currentQuestion.valueToLabel)
+        return currentQuestion.valueToLabel(value);
+      if (currentQuestion.labelMapping) {
+        const mappedLabel = currentQuestion.labelMapping.find(
+          (item) => value >= item.min && value <= item.max
+        );
+        return mappedLabel ? mappedLabel.label : "";
+      }
+      return value.toString();
+    },
+    [currentQuestion]
+  );
+
+  const renderSliderLabels = () => {
+    if (!currentQuestion || !currentQuestion.labelMapping) return null;
+    return (
+      <div className="flex w-full mt-2">
+        {currentQuestion.labelMapping.map((item, index) => (
+          <div key={index} className="flex-1 text-xs text-gray-600 text-center">
+            {item.label}
+          </div>
+        ))}
+      </div>
+    );
+  };
+
   const handleNextQuestion = async (autoSubmit = false) => {
     if (!autoSubmit && !validateAnswer()) return;
     setValidationError("");
     const currentAnswer = getCurrentAnswer();
-    // Save answer using question number as key.
     addQuizData(currentQuestionIndex + 1, {
       questionNumber: currentQuestionIndex + 1,
       question: currentQuestion.question,
       ...(inputType === "radio" && { options: currentQuestion.options }),
-      ...(inputType === "slider" && { options: currentQuestion.labels }),
+      ...(inputType === "slider" && {
+        value: sliderValue,
+        label: getSliderLabel(sliderValue),
+      }),
       response: currentAnswer,
     });
+    // Sync with quiz history store.
+    addHistoryEntry({
+      questionNumber: currentQuestionIndex + 1,
+      question: currentQuestion.question,
+      options: inputType === "radio" ? currentQuestion.options : undefined,
+      response: currentAnswer,
+    });
+    if (currentQuestionIndex >= staticQuestions.length) {
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: "user",
+          content: JSON.stringify({
+            options: inputType === "radio" ? currentQuestion.options : [],
+            response: currentAnswer,
+          }),
+        },
+      ]);
+    }
     const nextIndex = currentQuestionIndex + 1;
     if (nextIndex < TOTAL_QUESTIONS) {
+      if (
+        nextIndex >= staticQuestions.length &&
+        nextIndex >= questions.length
+      ) {
+        await fetchNextDynamicQuestion();
+      }
       setCurrentQuestionIndex(nextIndex);
     } else {
       router.push("/results");
     }
   };
 
-  // Handle finish quiz from the review modal.
   const handleFinishQuiz = () => {
+    triggerConfetti();
     router.push("/results");
   };
 
-  // Get current answer based on input type.
   const getCurrentAnswer = useCallback(() => {
     switch (inputType) {
       case "radio":
         return selectedOption;
       case "slider":
-        return sliderValue;
+        return getSliderLabel(sliderValue);
       case "text":
       default:
         return textAnswer;
     }
-  }, [inputType, selectedOption, sliderValue, textAnswer]);
+  }, [inputType, selectedOption, sliderValue, textAnswer, getSliderLabel]);
 
-  // Validate the current answer.
   const validateAnswer = useCallback(() => {
     if (!currentQuestion) return false;
     if (!isQuestionRequired) return true;
@@ -397,7 +435,7 @@ export default function QuizPage() {
         }
         break;
       case "slider":
-        if ([null, "-"].includes(sliderValue)) {
+        if (sliderValue === null) {
           setValidationError("Please select a value on the scale.");
           return false;
         }
@@ -435,38 +473,13 @@ export default function QuizPage() {
     return `${minutes}:${remainingSeconds < 10 ? "0" : ""}${remainingSeconds}`;
   };
 
-  // Render slider labels below the slider.
-  const renderSliderLabels = () => {
-    if (!currentQuestion || !currentQuestion.labels) return null;
-    return (
-      <div className="flex justify-between w-full mt-2 px-2">
-        {currentQuestion.labels.map((label, index) => {
-          const displayText = label.includes(" - ")
-            ? label.split(" - ")[1]
-            : label;
-          return (
-            <div
-              key={index}
-              className="text-xs text-gray-600 text-center"
-              style={{ width: `${100 / currentQuestion.labels.length}%` }}
-            >
-              {displayText}
-            </div>
-          );
-        })}
-      </div>
-    );
-  };
-
-  // Toggle hint display.
   const toggleHint = () => {
     if (!showHint && currentQuestion?.hint) {
-      setHint(currentQuestion.hint || "No hint available for this question.");
+      setHint(currentQuestion?.hint || "No hint available for this question.");
     }
     setShowHint(!showHint);
   };
 
-  // Trigger confetti effect.
   const triggerConfetti = () => {
     if (typeof window !== "undefined" && confetti) {
       const end = Date.now() + 1500;
@@ -493,7 +506,6 @@ export default function QuizPage() {
     }
   };
 
-  // Render input component based on question type.
   const renderQuestionInput = () => {
     if (!currentQuestion) return null;
     switch (inputType) {
@@ -529,25 +541,23 @@ export default function QuizPage() {
           <div className="w-full">
             <div className="flex items-center justify-between mb-2">
               <span className="text-sm font-medium text-gray-700">
-                {currentQuestion.min}
+                {currentQuestion.labelMapping?.[0]?.label || "Min"}
               </span>
               <span className="text-lg font-bold text-primary">
-                {sliderValue !== null && currentQuestion.labels
-                  ? currentQuestionIndex + 1 === 8
-                    ? getIntSliderLabel(sliderValue)
-                    : getSliderLabel(sliderValue)
-                  : "-"}
+                {sliderValue !== null ? getSliderLabel(sliderValue) : "-"}
               </span>
               <span className="text-sm font-medium text-gray-700">
-                {currentQuestion.max}
+                {currentQuestion.labelMapping?.[
+                  currentQuestion.labelMapping.length - 1
+                ]?.label || "Max"}
               </span>
             </div>
             <Slider
               aria-labelledby={`question-${currentQuestionIndex + 1}`}
               step={currentQuestion.step || 1}
-              min={currentQuestion.min}
-              max={currentQuestion.max}
-              defaultValue={currentQuestion.defaultValue}
+              min={currentQuestion.min || 1}
+              max={currentQuestion.max || 100}
+              defaultValue={currentQuestion.defaultValue || 50}
               value={sliderValue}
               onChange={(value) => {
                 setSliderValue(value);
@@ -564,14 +574,6 @@ export default function QuizPage() {
                 thumb:
                   "w-6 h-6 shadow-lg active:scale-125 transition-transform duration-200 bg-current",
               }}
-              marks={currentQuestion.labels?.map((label, index) => {
-                const value =
-                  currentQuestion.min +
-                  index *
-                    ((currentQuestion.max - currentQuestion.min) /
-                      (currentQuestion.labels.length - 1));
-                return { value };
-              })}
             />
             {renderSliderLabels()}
           </div>
@@ -602,24 +604,21 @@ export default function QuizPage() {
     }
   };
 
-  // Loading state UI
-  if (loading) {
+  if (loading || loadingNextQuestion) {
     return (
       <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-gray-50 to-blue-100 p-6">
         <div className="text-center bg-white p-8 rounded-xl shadow-lg transform transition-all duration-500 hover:shadow-2xl">
           <Spinner color="primary" size="lg" />
           <p className="mt-4 text-lg font-medium text-gray-700 animate-pulse">
-            {currentQuestionIndex === staticQuestions.length - 1 &&
-            !dynamicQuestionsLoaded
-              ? "Loading all remaining questions..."
-              : "Preparing your next question..."}
+            {loadingNextQuestion
+              ? "Loading your next question..."
+              : "Preparing the quiz..."}
           </p>
         </div>
       </div>
     );
   }
 
-  // Error state UI
   if (error) {
     return (
       <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-gray-50 to-blue-100 p-6">
@@ -632,7 +631,7 @@ export default function QuizPage() {
             <p className="mb-4 text-gray-800">{error}</p>
             <Button
               color="primary"
-              onClick={() => setError(null)}
+              onPress={() => setError(null)}
               startContent={<RefreshCw size={18} />}
               className="bg-gradient-to-r from-blue-600 to-blue-800 shadow-md hover:shadow-lg transition-all duration-200"
             >
@@ -644,17 +643,30 @@ export default function QuizPage() {
     );
   }
 
-  // Main quiz UI
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-gray-50 to-blue-100 p-6 pb-12">
       <header className="w-full max-w-3xl mb-8 text-center">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">
-          Crayon Gen-AI Internship Test
-        </h1>
-        <p className="text-gray-600">Test your skills and understanding.</p>
+        <div className="flex justify-between items-center">
+          <div>
+            <h1 className="text-3xl font-bold text-gray-900 mb-2">
+              Crayon Gen-AI Internship Test
+            </h1>
+            <p className="text-gray-600">Test your skills and understanding.</p>
+          </div>
+          <Button
+            color="danger"
+            variant="flat"
+            size="sm"
+            onPress={() => {
+              clearStore();
+              window.location.reload();
+            }}
+          >
+            Clear Storage
+          </Button>
+        </div>
       </header>
 
-      {/* Overall Quiz Progress */}
       <div className="w-full max-w-3xl mb-6">
         <div className="flex justify-between items-center mb-3">
           <span className="text-sm font-medium text-gray-700">
@@ -679,7 +691,6 @@ export default function QuizPage() {
         />
       </div>
 
-      {/* Quiz Card */}
       <Card className="max-w-3xl w-full bg-white shadow-xl rounded-xl overflow-hidden border border-gray-200">
         <CardHeader className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-gray-200 bg-gray-50 px-6 py-5">
           <div className="flex items-center gap-3 mb-2 sm:mb-0">
@@ -734,7 +745,7 @@ export default function QuizPage() {
             </motion.div>
           )}
           <motion.div layout>{renderQuestionInput()}</motion.div>
-          {currentQuestion.hint && (
+          {currentQuestion?.hint && (
             <div className="mt-6">
               <Tooltip
                 content={<div className="text-sm">{hint}</div>}
@@ -779,7 +790,7 @@ export default function QuizPage() {
                   <ArrowRight size={18} />
                 )
               }
-              onClick={() => handleNextQuestion()}
+              onPress={() => handleNextQuestion()}
               isDisabled={
                 isQuestionRequired &&
                 ((inputType === "radio" && !selectedOption) ||
@@ -794,7 +805,6 @@ export default function QuizPage() {
         </CardFooter>
       </Card>
 
-      {/* Review Answers Modal */}
       <Modal
         isOpen={showReviewModal}
         onClose={() => setShowReviewModal(false)}
@@ -816,33 +826,29 @@ export default function QuizPage() {
             {questions.map((q, index) => (
               <div
                 key={index}
-                className="mb-6 p-4 rounded-lg border border-gray-200 bg-gray-50"
+                className="mb-6 p-4 rounded-lg border border-gray-200"
               >
-                <h4 className="font-semibold text-lg text-gray-800 mb-3">
-                  Question {index + 1}: {q.question}
-                </h4>
-                <p className="text-gray-700">
-                  <strong>Your Answer:</strong>{" "}
-                  {(quizData[index + 1] && quizData[index + 1].response) ||
-                    "No answer provided"}
+                <h4 className="text-lg font-semibold">{`Q${index + 1}: ${
+                  q.question
+                }`}</h4>
+                <p className="mt-2 text-gray-700">
+                  {quizData[index + 1]
+                    ? quizData[index + 1].response
+                    : "No answer provided"}
                 </p>
               </div>
             ))}
           </ModalBody>
           <ModalFooter>
-            <Button
-              color="default"
-              variant="flat"
-              onPress={() => setShowReviewModal(false)}
-            >
-              Back to Edit
+            <Button color="primary" onPress={handleFinishQuiz}>
+              Submit Quiz
             </Button>
             <Button
-              color="primary"
-              onPress={handleFinishQuiz}
-              endContent={<CheckCircle size={18} />}
+              variant="flat"
+              color="secondary"
+              onPress={() => setShowReviewModal(false)}
             >
-              Finish Quiz
+              Edit Answers
             </Button>
           </ModalFooter>
         </ModalContent>

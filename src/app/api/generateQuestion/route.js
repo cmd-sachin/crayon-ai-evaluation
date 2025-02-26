@@ -8,7 +8,7 @@ const google = createGoogleGenerativeAI({ apiKey: process.env.API_KEY });
 export async function POST(req) {
   try {
     const { messages } = await req.json();
-
+    console.log(messages);
     const result = await generateObject({
       model: google("gemini-2.0-flash-exp"),
       system: systemPrompt,
@@ -18,7 +18,7 @@ export async function POST(req) {
       }),
       messages: messages,
     });
-    console.log(messages);
+    console.log(result.object);
     return new Response(JSON.stringify(result.object));
   } catch (error) {
     console.error("Error in generateQuestion API:", error);

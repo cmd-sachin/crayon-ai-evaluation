@@ -74,9 +74,15 @@ __turbopack_esm__({
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$stores$2f$quizStore$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/src/app/stores/quizStore.js [app-client] (ecmascript)");
+(()=>{
+    const e = new Error("Cannot find module '../app/stores/zipCodeStore'");
+    e.code = 'MODULE_NOT_FOUND';
+    throw e;
+})();
 ;
 var _s = __turbopack_refresh__.signature();
 "use client";
+;
 ;
 ;
 // Total questions for the quiz.
@@ -159,190 +165,104 @@ const staticQuestions = [
 ];
 function QuizPage() {
     _s();
-    const { currentQuestionIndex, setCurrentQuestionIndex, addQuizData, updateQuizHistory, quizHistory } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$stores$2f$quizStore$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])();
-    // Local state for current question, answer, dynamic loading, error, and messages.
+    const { currentQuestionIndex, setCurrentQuestionIndex, addQuizData, updateQuizHistory } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$stores$2f$quizStore$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])();
     const [currentQuestion, setCurrentQuestion] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     const [answer, setAnswer] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
-    const [loadingDynamic, setLoadingDynamic] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
-    // messages state is only used for dynamic questions
     const [messages, setMessages] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([
         {
             role: "user",
-            content: "Dummy Python Code"
+            content: JSON.stringify({})
         }
     ]);
-    // Load the current question based on the current index.
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "QuizPage.useEffect": ()=>{
+            loadNextQuestion();
+        }
+    }["QuizPage.useEffect"], [
+        currentQuestionIndex
+    ]);
+    const loadNextQuestion = async ()=>{
+        setLoading(true);
+        try {
             if (currentQuestionIndex < staticQuestions.length) {
                 setCurrentQuestion(staticQuestions[currentQuestionIndex]);
             } else {
-                const fetchDynamic = {
-                    "QuizPage.useEffect.fetchDynamic": async ()=>{
-                        setLoadingDynamic(true);
-                        try {
-                            const dynamicQuestion = await fetchDynamicQuestion(messages);
-                            setCurrentQuestion(dynamicQuestion);
-                            setLoadingDynamic(false);
-                        } catch (err) {
-                            setError(err.message);
-                            setLoadingDynamic(false);
-                        }
-                    }
-                }["QuizPage.useEffect.fetchDynamic"];
-                fetchDynamic();
+                const dynamicQuestion = await fetchDynamicQuestion();
+                setCurrentQuestion(dynamicQuestion);
             }
+        } catch (err) {
+            setError(err.message);
         }
-    }["QuizPage.useEffect"], [
-        currentQuestionIndex,
-        messages
-    ]);
-    // When answer changes, always update quizHistory.
-    // For dynamic questions only (currentQuestionIndex >= staticQuestions.length),
-    // also update the messages state.
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
-        "QuizPage.useEffect": ()=>{
-            if (currentQuestion) {
-                const qNumber = currentQuestionIndex + 1;
-                const entry = {
-                    role: "user",
-                    content: JSON.stringify({
-                        questionNumber: qNumber,
-                        section: currentQuestion.section || "",
-                        question: currentQuestion.question,
-                        options: currentQuestion.options || [],
-                        response: answer
-                    })
-                };
-                updateQuizHistory({
-                    questionNumber: qNumber,
-                    section: currentQuestion.section || "",
-                    question: currentQuestion.question,
-                    options: currentQuestion.options || [],
-                    response: answer
-                });
-                if (currentQuestionIndex >= staticQuestions.length) {
-                    setMessages({
-                        "QuizPage.useEffect": (prev)=>{
-                            const idx = prev.findIndex({
-                                "QuizPage.useEffect.idx": (msg)=>{
-                                    try {
-                                        const parsed = JSON.parse(msg.content);
-                                        return parsed.questionNumber === qNumber;
-                                    } catch (e) {
-                                        return false;
-                                    }
-                                }
-                            }["QuizPage.useEffect.idx"]);
-                            if (idx > -1) {
-                                const newMessages = [
-                                    ...prev
-                                ];
-                                newMessages[idx] = entry;
-                                return newMessages;
-                            }
-                            return [
-                                ...prev,
-                                entry
-                            ];
-                        }
-                    }["QuizPage.useEffect"]);
-                }
-            }
-        }
-    }["QuizPage.useEffect"], [
-        answer,
-        currentQuestion,
-        currentQuestionIndex,
-        updateQuizHistory
-    ]);
-    // Calculate progress percentage.
-    const progress = Math.round(currentQuestionIndex / totalQuestions * 100);
-    // On "Next", validate, persist answer in quizData, and advance.
-    const handleNext = ()=>{
-        if (currentQuestion.required !== false && !answer) {
+        setLoading(false);
+    };
+    const handleNext = async ()=>{
+        if (!answer) {
             alert("Please provide an answer.");
             return;
         }
         const qNumber = currentQuestionIndex + 1;
         const entry = {
-            role: "user",
-            content: JSON.stringify({
-                questionNumber: qNumber,
-                section: currentQuestion.section || "",
-                question: currentQuestion.question,
-                options: currentQuestion.options || [],
-                response: answer
-            })
-        };
-        addQuizData(qNumber, {
             questionNumber: qNumber,
             section: currentQuestion.section || "",
             question: currentQuestion.question,
             options: currentQuestion.options || [],
             response: answer
-        });
-        // For dynamic questions, you can add the message again if needed.
+        };
+        addQuizData(qNumber, entry);
+        updateQuizHistory(entry);
         if (currentQuestionIndex >= staticQuestions.length) {
             setMessages((prev)=>[
                     ...prev,
-                    entry
+                    {
+                        role: "user",
+                        content: JSON.stringify(entry)
+                    }
                 ]);
         }
-        setAnswer(""); // Reset answer for next question.
+        setAnswer("");
         if (currentQuestionIndex + 1 < totalQuestions) {
             setCurrentQuestionIndex(currentQuestionIndex + 1);
         } else {
             alert("Quiz completed!");
         }
     };
-    // fetchDynamicQuestion sends messages and appends the assistant's reply to messages.
-    async function fetchDynamicQuestion(messagesParam) {
+    const fetchDynamicQuestion = async ()=>{
         const response = await fetch("/api/generateQuestion", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                messages: messagesParam
+                messages
             })
         });
         if (!response.ok) {
             throw new Error("Failed to fetch dynamic question");
         }
         const data = await response.json();
-        // Append a new assistant message with the dynamic question.
-        setMessages((prevMessages)=>[
-                ...prevMessages,
+        setMessages((prev)=>[
+                ...prev,
                 {
                     role: "assistant",
-                    content: JSON.stringify({
-                        question: data.question,
-                        options: data.options || []
-                    })
+                    content: JSON.stringify(data)
                 }
             ]);
         return data;
-    }
-    // Render the input based on question type.
+    };
     const renderInput = ()=>{
         if (!currentQuestion) return null;
         switch(currentQuestion.inputType){
             case "text":
                 return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                     type: "text",
-                    placeholder: currentQuestion.placeholder || "",
+                    placeholder: currentQuestion.placeholder,
                     value: answer,
-                    onChange: (e)=>setAnswer(e.target.value),
-                    style: {
-                        width: "100%",
-                        padding: "8px",
-                        fontSize: "16px"
-                    }
+                    onChange: (e)=>setAnswer(e.target.value)
                 }, void 0, false, {
                     fileName: "[project]/src/app/page.js",
-                    lineNumber: 230,
+                    lineNumber: 172,
                     columnNumber: 11
                 }, this);
             case "slider":
@@ -357,181 +277,107 @@ function QuizPage() {
                             onChange: (e)=>setAnswer(e.target.value)
                         }, void 0, false, {
                             fileName: "[project]/src/app/page.js",
-                            lineNumber: 241,
+                            lineNumber: 182,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                            style: {
-                                marginLeft: "10px"
-                            },
                             children: answer || currentQuestion.defaultValue
                         }, void 0, false, {
                             fileName: "[project]/src/app/page.js",
-                            lineNumber: 249,
+                            lineNumber: 190,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/page.js",
-                    lineNumber: 240,
-                    columnNumber: 11
-                }, this);
-            case "radio":
-                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    children: currentQuestion.options.map((opt, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                            style: {
-                                marginRight: "12px"
-                            },
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                    type: "radio",
-                                    name: "option",
-                                    value: opt,
-                                    checked: answer === opt,
-                                    onChange: (e)=>setAnswer(e.target.value)
-                                }, void 0, false, {
-                                    fileName: "[project]/src/app/page.js",
-                                    lineNumber: 259,
-                                    columnNumber: 17
-                                }, this),
-                                opt
-                            ]
-                        }, idx, true, {
-                            fileName: "[project]/src/app/page.js",
-                            lineNumber: 258,
-                            columnNumber: 15
-                        }, this))
-                }, void 0, false, {
-                    fileName: "[project]/src/app/page.js",
-                    lineNumber: 256,
+                    lineNumber: 181,
                     columnNumber: 11
                 }, this);
             default:
                 return null;
         }
     };
-    if (error) {
-        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            children: [
-                "Error: ",
-                error
-            ]
-        }, void 0, true, {
-            fileName: "[project]/src/app/page.js",
-            lineNumber: 277,
-            columnNumber: 12
-        }, this);
-    }
-    if (!currentQuestion || currentQuestionIndex >= staticQuestions.length && loadingDynamic) {
-        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            children: "Loading question..."
-        }, void 0, false, {
-            fileName: "[project]/src/app/page.js",
-            lineNumber: 283,
-            columnNumber: 12
-        }, this);
-    }
+    if (error) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        children: [
+            "Error: ",
+            error
+        ]
+    }, void 0, true, {
+        fileName: "[project]/src/app/page.js",
+        lineNumber: 198,
+        columnNumber: 21
+    }, this);
+    if (loading) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        children: "Loading question..."
+    }, void 0, false, {
+        fileName: "[project]/src/app/page.js",
+        lineNumber: 199,
+        columnNumber: 23
+    }, this);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        style: {
-            maxWidth: "600px",
-            margin: "40px auto",
-            fontFamily: "Arial"
-        },
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                 children: "Quiz"
             }, void 0, false, {
                 fileName: "[project]/src/app/page.js",
-                lineNumber: 290,
+                lineNumber: 203,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                style: {
-                    marginBottom: "20px"
-                },
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                 children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        children: [
-                            "Progress: ",
-                            progress,
-                            "%"
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/src/app/page.js",
-                        lineNumber: 292,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        children: [
-                            "Question ",
-                            currentQuestionIndex + 1,
-                            " of ",
-                            totalQuestions
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/src/app/page.js",
-                        lineNumber: 293,
-                        columnNumber: 9
-                    }, this)
+                    "Progress: ",
+                    Math.round(currentQuestionIndex / totalQuestions * 100),
+                    "%"
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/page.js",
-                lineNumber: 291,
+                lineNumber: 204,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                children: [
+                    "Question ",
+                    currentQuestionIndex + 1,
+                    " of ",
+                    totalQuestions
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/app/page.js",
+                lineNumber: 207,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                style: {
-                    border: "1px solid #ccc",
-                    padding: "20px",
-                    marginBottom: "20px"
-                },
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                        children: currentQuestion.question
+                        children: currentQuestion?.question
                     }, void 0, false, {
                         fileName: "[project]/src/app/page.js",
-                        lineNumber: 304,
+                        lineNumber: 211,
                         columnNumber: 9
                     }, this),
                     renderInput()
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/page.js",
-                lineNumber: 297,
+                lineNumber: 210,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                 onClick: handleNext,
-                style: {
-                    padding: "10px 20px",
-                    fontSize: "16px"
-                },
                 children: "Next"
             }, void 0, false, {
                 fileName: "[project]/src/app/page.js",
-                lineNumber: 307,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("pre", {
-                style: {
-                    marginTop: "20px",
-                    background: "#f5f5f5",
-                    padding: "10px"
-                },
-                children: JSON.stringify(messages, null, 2)
-            }, void 0, false, {
-                fileName: "[project]/src/app/page.js",
-                lineNumber: 314,
+                lineNumber: 214,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/page.js",
-        lineNumber: 287,
+        lineNumber: 202,
         columnNumber: 5
     }, this);
 }
-_s(QuizPage, "oVDj7/mJnk/Cd7I0Y18aPXbnpig=", false, function() {
+_s(QuizPage, "faiqqyBQCvZjFjQl/jrLQRPli7I=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$stores$2f$quizStore$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"]
     ];
