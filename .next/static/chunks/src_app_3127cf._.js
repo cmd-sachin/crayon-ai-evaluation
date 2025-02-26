@@ -631,8 +631,7 @@ function QuizPage() {
                     {
                         role: "user",
                         content: JSON.stringify({
-                            question: currentQuestion.question,
-                            options: inputType === "radio" ? currentQuestion.options : undefined,
+                            options: inputType === "radio" ? currentQuestion.options : [],
                             response: currentAnswer
                         })
                     }
@@ -779,12 +778,12 @@ function QuizPage() {
                             children: option.includes(" - ") ? option.split(" - ")[0] : option
                         }, index, false, {
                             fileName: "[project]/src/app/quizPage/page.js",
-                            lineNumber: 526,
+                            lineNumber: 524,
                             columnNumber: 15
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/src/app/quizPage/page.js",
-                    lineNumber: 516,
+                    lineNumber: 514,
                     columnNumber: 11
                 }, this);
             case "slider":
@@ -799,7 +798,7 @@ function QuizPage() {
                                     children: currentQuestion.labelMapping?.[0]?.label || "Min"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/quizPage/page.js",
-                                    lineNumber: 545,
+                                    lineNumber: 543,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -807,7 +806,7 @@ function QuizPage() {
                                     children: sliderValue !== null ? getSliderLabel(sliderValue) : "-"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/quizPage/page.js",
-                                    lineNumber: 548,
+                                    lineNumber: 546,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -815,13 +814,13 @@ function QuizPage() {
                                     children: currentQuestion.labelMapping?.[currentQuestion.labelMapping.length - 1]?.label || "Max"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/quizPage/page.js",
-                                    lineNumber: 551,
+                                    lineNumber: 549,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/quizPage/page.js",
-                            lineNumber: 544,
+                            lineNumber: 542,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$slider$2f$dist$2f$chunk$2d$O6IB4TCE$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__slider_default__as__Slider$3e$__["Slider"], {
@@ -846,14 +845,14 @@ function QuizPage() {
                             }
                         }, void 0, false, {
                             fileName: "[project]/src/app/quizPage/page.js",
-                            lineNumber: 557,
+                            lineNumber: 555,
                             columnNumber: 13
                         }, this),
                         renderSliderLabels()
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/quizPage/page.js",
-                    lineNumber: 543,
+                    lineNumber: 541,
                     columnNumber: 11
                 }, this);
             case "text":
@@ -875,7 +874,7 @@ function QuizPage() {
                     }
                 }, void 0, false, {
                     fileName: "[project]/src/app/quizPage/page.js",
-                    lineNumber: 586,
+                    lineNumber: 584,
                     columnNumber: 11
                 }, this);
         }
@@ -891,7 +890,7 @@ function QuizPage() {
                         size: "lg"
                     }, void 0, false, {
                         fileName: "[project]/src/app/quizPage/page.js",
-                        lineNumber: 613,
+                        lineNumber: 611,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -899,18 +898,18 @@ function QuizPage() {
                         children: loadingNextQuestion ? "Loading your next question..." : "Preparing the quiz..."
                     }, void 0, false, {
                         fileName: "[project]/src/app/quizPage/page.js",
-                        lineNumber: 614,
+                        lineNumber: 612,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/quizPage/page.js",
-                lineNumber: 612,
+                lineNumber: 610,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/app/quizPage/page.js",
-            lineNumber: 611,
+            lineNumber: 609,
             columnNumber: 7
         }, this);
     }
@@ -928,7 +927,7 @@ function QuizPage() {
                                 className: "text-red-600"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/quizPage/page.js",
-                                lineNumber: 629,
+                                lineNumber: 627,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -936,13 +935,13 @@ function QuizPage() {
                                 children: "Error Occurred"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/quizPage/page.js",
-                                lineNumber: 630,
+                                lineNumber: 628,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/quizPage/page.js",
-                        lineNumber: 628,
+                        lineNumber: 626,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$card$2f$dist$2f$chunk$2d$5ALFRFZW$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__card_body_default__as__CardBody$3e$__["CardBody"], {
@@ -953,7 +952,7 @@ function QuizPage() {
                                 children: error
                             }, void 0, false, {
                                 fileName: "[project]/src/app/quizPage/page.js",
-                                lineNumber: 633,
+                                lineNumber: 631,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$button$2f$dist$2f$chunk$2d$G5TSEPD3$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__button_default__as__Button$3e$__["Button"], {
@@ -963,31 +962,31 @@ function QuizPage() {
                                     size: 18
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/quizPage/page.js",
-                                    lineNumber: 637,
+                                    lineNumber: 635,
                                     columnNumber: 29
                                 }, void 0),
                                 className: "bg-gradient-to-r from-blue-600 to-blue-800 shadow-md hover:shadow-lg transition-all duration-200",
                                 children: "Try Again"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/quizPage/page.js",
-                                lineNumber: 634,
+                                lineNumber: 632,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/quizPage/page.js",
-                        lineNumber: 632,
+                        lineNumber: 630,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/quizPage/page.js",
-                lineNumber: 627,
+                lineNumber: 625,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/app/quizPage/page.js",
-            lineNumber: 626,
+            lineNumber: 624,
             columnNumber: 7
         }, this);
     }
@@ -1006,7 +1005,7 @@ function QuizPage() {
                                     children: "Crayon Gen-AI Internship Test"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/quizPage/page.js",
-                                    lineNumber: 653,
+                                    lineNumber: 651,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1014,13 +1013,13 @@ function QuizPage() {
                                     children: "Test your skills and understanding."
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/quizPage/page.js",
-                                    lineNumber: 656,
+                                    lineNumber: 654,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/quizPage/page.js",
-                            lineNumber: 652,
+                            lineNumber: 650,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$button$2f$dist$2f$chunk$2d$G5TSEPD3$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__button_default__as__Button$3e$__["Button"], {
@@ -1034,18 +1033,18 @@ function QuizPage() {
                             children: "Clear Storage"
                         }, void 0, false, {
                             fileName: "[project]/src/app/quizPage/page.js",
-                            lineNumber: 658,
+                            lineNumber: 656,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/quizPage/page.js",
-                    lineNumber: 651,
+                    lineNumber: 649,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/quizPage/page.js",
-                lineNumber: 650,
+                lineNumber: 648,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1063,7 +1062,7 @@ function QuizPage() {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/quizPage/page.js",
-                                lineNumber: 674,
+                                lineNumber: 672,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1076,13 +1075,13 @@ function QuizPage() {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/quizPage/page.js",
-                                lineNumber: 677,
+                                lineNumber: 675,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/quizPage/page.js",
-                        lineNumber: 673,
+                        lineNumber: 671,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$progress$2f$dist$2f$chunk$2d$5A5NBK2V$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__progress_default__as__Progress$3e$__["Progress"], {
@@ -1099,13 +1098,13 @@ function QuizPage() {
                         }
                     }, void 0, false, {
                         fileName: "[project]/src/app/quizPage/page.js",
-                        lineNumber: 681,
+                        lineNumber: 679,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/quizPage/page.js",
-                lineNumber: 672,
+                lineNumber: 670,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$card$2f$dist$2f$chunk$2d$46NETW2U$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__card_default__as__Card$3e$__["Card"], {
@@ -1127,18 +1126,18 @@ function QuizPage() {
                                         size: 20
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/quizPage/page.js",
-                                        lineNumber: 706,
+                                        lineNumber: 704,
                                         columnNumber: 17
                                     }, void 0),
                                     children: currentQuestion?.section || "Question"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/quizPage/page.js",
-                                    lineNumber: 699,
+                                    lineNumber: 697,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/quizPage/page.js",
-                                lineNumber: 698,
+                                lineNumber: 696,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1150,7 +1149,7 @@ function QuizPage() {
                                         className: isTimerWarning ? "text-red-500 animate-pulse" : ""
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/quizPage/page.js",
-                                        lineNumber: 716,
+                                        lineNumber: 714,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1158,19 +1157,19 @@ function QuizPage() {
                                         children: formatTime(timer)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/quizPage/page.js",
-                                        lineNumber: 720,
+                                        lineNumber: 718,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/quizPage/page.js",
-                                lineNumber: 712,
+                                lineNumber: 710,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/quizPage/page.js",
-                        lineNumber: 697,
+                        lineNumber: 695,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$card$2f$dist$2f$chunk$2d$5ALFRFZW$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__card_body_default__as__CardBody$3e$__["CardBody"], {
@@ -1182,7 +1181,7 @@ function QuizPage() {
                                 children: currentQuestion?.question
                             }, void 0, false, {
                                 fileName: "[project]/src/app/quizPage/page.js",
-                                lineNumber: 730,
+                                lineNumber: 728,
                                 columnNumber: 11
                             }, this),
                             validationError && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1208,20 +1207,20 @@ function QuizPage() {
                                         size: 18
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/quizPage/page.js",
-                                        lineNumber: 745,
+                                        lineNumber: 743,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         children: validationError
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/quizPage/page.js",
-                                        lineNumber: 746,
+                                        lineNumber: 744,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/quizPage/page.js",
-                                lineNumber: 737,
+                                lineNumber: 735,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1229,7 +1228,7 @@ function QuizPage() {
                                 children: renderQuestionInput()
                             }, void 0, false, {
                                 fileName: "[project]/src/app/quizPage/page.js",
-                                lineNumber: 749,
+                                lineNumber: 747,
                                 columnNumber: 11
                             }, this),
                             currentQuestion?.hint && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1240,7 +1239,7 @@ function QuizPage() {
                                         children: hint
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/quizPage/page.js",
-                                        lineNumber: 753,
+                                        lineNumber: 751,
                                         columnNumber: 26
                                     }, void 0),
                                     placement: "bottom",
@@ -1256,28 +1255,28 @@ function QuizPage() {
                                             size: 20
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/quizPage/page.js",
-                                            lineNumber: 765,
+                                            lineNumber: 763,
                                             columnNumber: 19
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/quizPage/page.js",
-                                        lineNumber: 756,
+                                        lineNumber: 754,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/quizPage/page.js",
-                                    lineNumber: 752,
+                                    lineNumber: 750,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/quizPage/page.js",
-                                lineNumber: 751,
+                                lineNumber: 749,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/quizPage/page.js",
-                        lineNumber: 729,
+                        lineNumber: 727,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$card$2f$dist$2f$chunk$2d$JHUBASYZ$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__card_footer_default__as__CardFooter$3e$__["CardFooter"], {
@@ -1293,25 +1292,25 @@ function QuizPage() {
                                             size: 16
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/quizPage/page.js",
-                                            lineNumber: 777,
+                                            lineNumber: 775,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                             children: isLastQuestion ? "This is the final question" : "Answer thoughtfully"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/quizPage/page.js",
-                                            lineNumber: 778,
+                                            lineNumber: 776,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/quizPage/page.js",
-                                    lineNumber: 776,
+                                    lineNumber: 774,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/quizPage/page.js",
-                                lineNumber: 772,
+                                lineNumber: 770,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1322,13 +1321,13 @@ function QuizPage() {
                                         size: 18
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/quizPage/page.js",
-                                        lineNumber: 790,
+                                        lineNumber: 788,
                                         columnNumber: 19
                                     }, void 0) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
                                         size: 18
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/quizPage/page.js",
-                                        lineNumber: 792,
+                                        lineNumber: 790,
                                         columnNumber: 19
                                     }, void 0),
                                     onPress: ()=>handleNextQuestion(),
@@ -1337,24 +1336,24 @@ function QuizPage() {
                                     children: isLastQuestion ? "Review & Finish" : "Next Question"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/quizPage/page.js",
-                                    lineNumber: 786,
+                                    lineNumber: 784,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/quizPage/page.js",
-                                lineNumber: 785,
+                                lineNumber: 783,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/quizPage/page.js",
-                        lineNumber: 771,
+                        lineNumber: 769,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/quizPage/page.js",
-                lineNumber: 696,
+                lineNumber: 694,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$modal$2f$dist$2f$chunk$2d$KMN6V4NS$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__modal_default__as__Modal$3e$__["Modal"], {
@@ -1374,7 +1373,7 @@ function QuizPage() {
                                     children: "Review Your Answers"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/quizPage/page.js",
-                                    lineNumber: 820,
+                                    lineNumber: 818,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1382,13 +1381,13 @@ function QuizPage() {
                                     children: "Please review your responses before submitting the quiz."
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/quizPage/page.js",
-                                    lineNumber: 823,
+                                    lineNumber: 821,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/quizPage/page.js",
-                            lineNumber: 819,
+                            lineNumber: 817,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$modal$2f$dist$2f$chunk$2d$EPDLEVDR$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__modal_body_default__as__ModalBody$3e$__["ModalBody"], {
@@ -1401,7 +1400,7 @@ function QuizPage() {
                                             children: `Q${index + 1}: ${q.question}`
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/quizPage/page.js",
-                                            lineNumber: 833,
+                                            lineNumber: 831,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1409,18 +1408,18 @@ function QuizPage() {
                                             children: quizData[index + 1] ? quizData[index + 1].response : "No answer provided"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/quizPage/page.js",
-                                            lineNumber: 836,
+                                            lineNumber: 834,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, index, true, {
                                     fileName: "[project]/src/app/quizPage/page.js",
-                                    lineNumber: 829,
+                                    lineNumber: 827,
                                     columnNumber: 15
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/src/app/quizPage/page.js",
-                            lineNumber: 827,
+                            lineNumber: 825,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$modal$2f$dist$2f$chunk$2d$QY5NICTW$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__modal_footer_default__as__ModalFooter$3e$__["ModalFooter"], {
@@ -1431,7 +1430,7 @@ function QuizPage() {
                                     children: "Submit Quiz"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/quizPage/page.js",
-                                    lineNumber: 845,
+                                    lineNumber: 843,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$button$2f$dist$2f$chunk$2d$G5TSEPD3$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__button_default__as__Button$3e$__["Button"], {
@@ -1441,30 +1440,30 @@ function QuizPage() {
                                     children: "Edit Answers"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/quizPage/page.js",
-                                    lineNumber: 848,
+                                    lineNumber: 846,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/quizPage/page.js",
-                            lineNumber: 844,
+                            lineNumber: 842,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/quizPage/page.js",
-                    lineNumber: 818,
+                    lineNumber: 816,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/quizPage/page.js",
-                lineNumber: 810,
+                lineNumber: 808,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/quizPage/page.js",
-        lineNumber: 649,
+        lineNumber: 647,
         columnNumber: 5
     }, this);
 }

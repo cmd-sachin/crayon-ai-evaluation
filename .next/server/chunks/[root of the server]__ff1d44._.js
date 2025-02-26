@@ -96,10 +96,12 @@ The **n questions** should be a **random mix** of the following:
 '''
 
 ## Remember Notes
+- Check the messages array carefully and generate unique/new question.
+- No repeated Questions should be generated
 - **Generate one question at a time.**
 - If **options aren't required**, provide [] or omit the options field.
 - **No duplicate questions.**
-- Ensure a **variety of question types that includes MCQ's , Fillups, Completing partial code snippet**.
+- Ensure a **variety of question types that includes MCQ's ,Fillups, Completing partial code snippet**.
 - Strictly **follow the rules and output structure**.`;
 const __TURBOPACK__default__export__ = systemPrompt;
 }}),
