@@ -1,5 +1,9 @@
 {
   "/page": "app/page.js",
+  "/api/airtable/login/route": "app/api/airtable/login/route.js",
+  "/form/page": "app/form/page.js",
+  "/api/airtable/data/route": "app/api/airtable/data/route.js",
+  "/api/airtable/form/route": "app/api/airtable/form/route.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/api/generateQuestion/route": "app/api/generateQuestion/route.js"
+  "/quizPage/page": "app/quizPage/page.js"
 }

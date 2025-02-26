@@ -1,11 +1,63 @@
-
 "use client";
 import "./globals.css";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import Loader from "./loader/Loader";
+
 export default function Login() {
+  const router = useRouter();
+  const [isLoading, setIsLoading] = useState(true);
+  const [user, setUser] = useState("");
+  const [pass, setpass] = useState("");
+
+  async function handleLogin(e) {
+    e.preventDefault();
+    const email = user;
+    const userKey = pass;
+
+    try {
+      const response = await fetch("/api/airtable/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, userKey }),
+      });
+      const data = await response.json();
+      if (data.success) {
+        console.log("Login success:", data.taskid);
+        router.push(`/form?taskid=${data.taskid}`);
+      } else {
+        console.log("Login failed:", data);
+      }
+    } catch (error) {
+      console.error("Error calling /api/airtable/login:", error);
+    }
+  }
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          height: "100vh",
+        }}
+      >
+        <Loader />
+      </div>
+    );
+  }
+
   return (
     <div className="container">
-      <form className="form_main" action="">
+      <form className="form_main" onSubmit={handleLogin}>
         <p className="heading">Login</p>
+
         <div className="inputContainer">
           <svg
             viewBox="0 0 16 16"
@@ -21,7 +73,9 @@ export default function Login() {
             placeholder="Mail ID"
             id="username"
             className="inputField"
+            value={user}
             type="text"
+            onChange={(e) => setUser(e.target.value)}
           />
         </div>
 
@@ -41,10 +95,14 @@ export default function Login() {
             id="password"
             className="inputField"
             type="password"
+            value={pass}
+            onChange={(e) => setpass(e.target.value)}
           />
         </div>
 
-        <button id="button">LOGIN</button>
+        <button type="submit" id="button">
+          LOGIN
+        </button>
         <div className="signupContainer"></div>
       </form>
     </div>
